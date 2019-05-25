@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://v2.parse.name/api/v2/names/parse?locale=en-US&q=tyler%20vannurden,%20first%20movers%20advantage
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Authorization:
+      - 66039622-9040-4964-bfe2-8ce4d1176724
+      Timeout:
+      - '5'
+      Host:
+      - v2.parse.name
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 13 May 2019 01:58:43 GMT
+      Server:
+      - Apache/2.4.29 (Ubuntu)
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5356a626-572e-44db-a698-4483252a6c33
+      X-Runtime:
+      - '0.308691'
+      X-Powered-By:
+      - Phusion Passenger 5.0.30
+      Etag:
+      - W/"0c8619e5dbf5496e17d2d32fc381ae1c"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"base":{"input":"tyler vannurden, first movers advantage","locale":"en-US"},"name":[{"given_name":"Tyler","surname":"Vannurden","input_placement_scores":{"[\"given_name\",
+        \"surname\"]":1.514,"[\"surname\", \"given_name\"]":0.486,"max_candidate":["given_name","surname"]},"full_name":"Tyler
+        Vannurden"}],"organization":[{"name":"First Movers Advantage"}]}'
+    http_version: 
+  recorded_at: Mon, 13 May 2019 01:58:44 GMT
+recorded_with: VCR 4.0.0

@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://v2.parse.name/api/v2/names/parse?locale=en-US&q=first%20movers%20advantage
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Authorization:
+      - abc
+      Timeout:
+      - '5'
+      Host:
+      - v2.parse.name
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Mon, 13 May 2019 01:04:07 GMT
+      Server:
+      - Apache/2.4.29 (Ubuntu)
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 220f9f82-44b6-4df5-8f74-3f6869241c13
+      X-Runtime:
+      - '0.008487'
+      X-Powered-By:
+      - Phusion Passenger 5.0.30
+      Status:
+      - 401 Unauthorized
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: "{}"
+    http_version: 
+  recorded_at: Mon, 13 May 2019 01:04:07 GMT
+recorded_with: VCR 4.0.0
