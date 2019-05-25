@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe FmaDataNameParser::V1::Client do
+describe FmadataParseName::V1::Client do
   subject { described_class.new('c104048a-1f32-467c-9022-4b90d8893f85') }
 
   describe '#parse' do

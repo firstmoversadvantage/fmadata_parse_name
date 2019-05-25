@@ -1,4 +1,4 @@
-module FmaDataNameParser
+module FmadataParseName
   class Person
     attr_reader :given_name,
                 :secondary_name,

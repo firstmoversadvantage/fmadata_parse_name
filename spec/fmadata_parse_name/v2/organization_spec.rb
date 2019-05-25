@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe FmaDataNameParser::V2::Organization do
+describe FmadataParseName::V2::Organization do
   describe '#is_a_team?' do
     it 'returns true when the organization contains the word "team"' do
       expect(described_class.new('name' => 'The Old Team').is_a_team?).to eq(true)

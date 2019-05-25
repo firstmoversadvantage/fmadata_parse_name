@@ -1,4 +1,4 @@
-module FmaDataNameParser
+module FmadataParseName
   module V2
     class Client
       def initialize(token)

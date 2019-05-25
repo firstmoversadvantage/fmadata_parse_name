@@ -1,6 +1,6 @@
-module FmaDataNameParser
+module FmadataParseName
   module V2
-    class Person < FmaDataNameParser::Person
+    class Person < FmadataParseName::Person
       def initialize(v2_parse_response)
         @given_name = v2_parse_response['given_name']
         @secondary_name = v2_parse_response['secondary_name']
