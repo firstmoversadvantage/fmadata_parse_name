@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://parse.name/names/parse.json?q=tyler%20vannurden&token=c104048a-1f32-467c-9022-4b90d8893f85
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Timeout:
+      - '5'
+      Host:
+      - parse.name
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 25 May 2019 21:39:46 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.008640'
+      X-Request-Id:
+      - f19ff137-7832-4ed4-95ab-b273cac51064
+      X-Powered-By:
+      - Phusion Passenger 5.3.4
+      Set-Cookie:
+      - _parse_name_session=RU1OWnZrcllNaVUwcjc5MndqNDZNWVBxbTRpY0UvL3p1WGhZdEdFTWVwV0l3UWRENjF2VW5FOGRuR0lTclhSS3c4d0tFQjFjR0Y1ZmNnbFhqNmJiOVQyMWJlZ0pWUXhxem1iSWUydVZndC8wRlBPUnJZZFlrenpJeXFSaTdUMDYtLW5qTVpQSUxNV29KNm9oaFZFVUJnUHc9PQ%3D%3D--63c5375f1bb02821159956d29ab5beec8e0f7aba;
+        path=/; HttpOnly
+      Etag:
+      - W/"b9426689725a4e9720b2cc4f588ac486"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"name_like_score":2,"id":7439368,"uuid":"edac9337-102a-4ed7-976b-e60b2eea6370","language":"en","input":"tyler
+        vannurden","parse_status":200,"parse_method":"R","parser_version":24,"contains_aka_or_fka":false,"people_cache":[{"id":444870,"given_name":"Tyler","surname":"Vannurden","secondary_name":"","suffix":"","prefix":"","salutation":"","alternate_name":"","credentials":"","uuid":"337e1d81-5e98-4eda-921c-2d7bcf82f165","language":"en","gender":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":"2018-02-06T16:04:35.000Z","updated_at":"2018-02-06T16:04:35.000Z"}],"organizations_cache":[],"job_titles_cache":null,"credentials_cache":null,"email_addresses_cache":null,"telephones_cache":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":"2019-02-01T04:06:47.000Z","updated_at":"2019-02-01T04:06:47.000Z"}'
+    http_version: 
+  recorded_at: Sat, 25 May 2019 21:39:46 GMT
+recorded_with: VCR 4.0.0

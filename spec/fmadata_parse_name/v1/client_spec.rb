@@ -28,15 +28,41 @@ describe FmadataParseName::V1::Client do
           surname: 'Vannurden'
         )
       end
+
+      it 'returns an empty array for the :organizations key', :vcr do
+        response = subject.parse('tyler kenneth vannurden')
+        expect(response[:organizations]).to be_a(Array)
+        expect(response[:organizations].empty?).to be true
+      end
+
+      it 'assigns nil values for attributes that are empty', :vcr do
+        response = subject.parse('tyler vannurden')
+        expect(response[:people].first).to have_attributes(
+          secondary_name: nil,
+          salutations: nil,
+          credentials: nil,
+          prefixes: nil,
+          suffixes: nil,
+          alternate_name: nil
+        )
+      end
     end
 
-    it 'returns an array with an Organization object if an organization is entered', :vcr do
-      response = subject.parse('first movers advantage, llc')
-      expect(response[:organizations].count).to eq(1)
+    describe 'with an organization' do
+      it 'returns an array with an Organization object if an organization is entered', :vcr do
+        response = subject.parse('first movers advantage, llc')
+        expect(response[:organizations].count).to eq(1)
 
-      expect(response[:organizations][0]).to have_attributes(
-        name: 'First Movers Advantage, LLC',
-      )
+        expect(response[:organizations][0]).to have_attributes(
+          name: 'First Movers Advantage, LLC',
+        )
+      end
+
+      it 'returns an empty array for the :people key', :vcr do
+        response = subject.parse('first movers advantage, llc')
+        expect(response[:people]).to be_a(Array)
+        expect(response[:people].empty?).to be true
+      end
     end
   end
 end

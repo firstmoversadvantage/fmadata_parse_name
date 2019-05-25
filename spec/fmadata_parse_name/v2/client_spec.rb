@@ -16,56 +16,76 @@ describe FmadataParseName::V2::Client do
       }.to raise_error(RestClient::Unauthorized, '401 Unauthorized')
     end
 
-    it 'returns an array with a Person object if a single name is entered', :vcr do
-      response = subject.parse('mr. tyler kenneth vannurden, President')
-      expect(response[:people]).to be_a(Array)
-      expect(response[:people].count).to eq(1)
-      expect(response[:people].first).to have_attributes(
-        salutations: 'Mr',
-        given_name: 'Tyler',
-        secondary_name: 'Kenneth',
-        surname: 'Vannurden',
-        job_titles: 'President'
-      )
+    context 'with a single name' do
+      it 'returns an array with a Person object', :vcr do
+        response = subject.parse('mr. tyler kenneth vannurden, President')
+        expect(response[:people]).to be_a(Array)
+        expect(response[:people].count).to eq(1)
+        expect(response[:people].first).to have_attributes(
+          salutations: 'Mr',
+          given_name: 'Tyler',
+          secondary_name: 'Kenneth',
+          surname: 'Vannurden',
+          job_titles: 'President'
+        )
+      end
+
+      it 'returns an empty array for the :organizations key', :vcr do
+        response = subject.parse('mr. tyler kenneth vannurden, President')
+        expect(response[:organizations]).to be_a(Array)
+        expect(response[:organizations].empty?).to be true
+      end
     end
 
-    it 'returns an array with two Person objects if two names are entered', :vcr do
-      response = subject.parse('Tyler and Nolan Vannurden')
-      expect(response[:people].count).to eq(2)
+    context 'with two names' do
+      it 'returns an array with two Person objects', :vcr do
+        response = subject.parse('Tyler and Nolan Vannurden')
+        expect(response[:people].count).to eq(2)
 
-      expect(response[:people][0]).to have_attributes(
-        given_name: 'Tyler',
-        surname: 'Vannurden',
-      )
+        expect(response[:people][0]).to have_attributes(
+          given_name: 'Tyler',
+          surname: 'Vannurden',
+        )
 
-      expect(response[:people][1]).to have_attributes(
-        given_name: 'Nolan',
-        surname: 'Vannurden',
-      )
+        expect(response[:people][1]).to have_attributes(
+          given_name: 'Nolan',
+          surname: 'Vannurden',
+        )
+      end
     end
 
-    it 'returns an array with an Organization object if an organization is entered', :vcr do
-      response = subject.parse('first movers advantage')
-      expect(response[:organizations].count).to eq(1)
+    context 'with an organization' do
+      it 'returns an array with an Organization object', :vcr do
+        response = subject.parse('first movers advantage')
+        expect(response[:organizations].count).to eq(1)
 
-      expect(response[:organizations][0]).to have_attributes(
-        name: 'First Movers Advantage',
-      )
+        expect(response[:organizations][0]).to have_attributes(
+          name: 'First Movers Advantage',
+        )
+      end
+
+      it 'returns an empty array for the :people key', :vcr do
+        response = subject.parse('first movers advantage')
+        expect(response[:people]).to be_a(Array)
+        expect(response[:people].empty?).to be true
+      end
     end
 
-    it 'returns an array with a Person object and Organization object if both are entered', :vcr do
-      response = subject.parse('tyler vannurden, first movers advantage')
-      expect(response[:people].count).to eq(1)
-      expect(response[:organizations].count).to eq(1)
+    context 'with a name and an organization' do
+      it 'returns an array with a Person object and Organization object', :vcr do
+        response = subject.parse('tyler vannurden, first movers advantage')
+        expect(response[:people].count).to eq(1)
+        expect(response[:organizations].count).to eq(1)
 
-      expect(response[:people].first).to have_attributes(
-        given_name: 'Tyler',
-        surname: 'Vannurden',
-      )
+        expect(response[:people].first).to have_attributes(
+          given_name: 'Tyler',
+          surname: 'Vannurden',
+        )
 
-      expect(response[:organizations][0]).to have_attributes(
-        name: 'First Movers Advantage',
-      )
+        expect(response[:organizations][0]).to have_attributes(
+          name: 'First Movers Advantage',
+        )
+      end
     end
   end
 end

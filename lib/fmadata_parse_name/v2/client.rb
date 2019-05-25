@@ -20,12 +20,14 @@ module FmadataParseName
 
         json_response = JSON(response)
 
-        people = json_response['name'] && json_response['name'].map do |parsed_name|
-          Person.new(parsed_name)
+        people = []
+        json_response['name'] && json_response['name'].each do |parsed_name|
+          people << Person.new(parsed_name)
         end
 
-        organizations = json_response['organization'] && json_response['organization'].map do |parsed_org|
-          Organization.new(parsed_org)
+        organizations = []
+        json_response['organization'] && json_response['organization'].each do |parsed_org|
+          organizations << Organization.new(parsed_org)
         end
 
         {
