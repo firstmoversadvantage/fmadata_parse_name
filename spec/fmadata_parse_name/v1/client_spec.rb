@@ -16,6 +16,12 @@ describe FmadataParseName::V1::Client do
       }.to raise_error(RestClient::Unauthorized, '401 Unauthorized')
     end
 
+    it 'raises an exception with error messages if the parse failed', :vcr do
+      expect {
+        subject.parse('aiosefj poasjefah8w4foah4wfa')
+      }.to raise_error(FmadataParseName::ParseFailedError)
+    end
+
     describe 'with a single name' do
       it 'returns an array with a single Person object', :vcr do
         response = subject.parse('mr. tyler kenneth vannurden')

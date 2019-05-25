@@ -35,14 +35,10 @@ module FmadataParseName
           organizations: organizations
         }
       rescue RestClient::BadRequest => e
-        @status_code = e.response.code
-        @response = JSON(e.response.body)
-        @error = @response['base']['errors']
-        false
-      rescue RestClient::InternalServerError => e
-        @status_code = e.response.code
-        @response = JSON(e.response.body)
-        false
+        # json_response = JSON(e.response.body)
+        raise FmadataParseName::ParseFailedError
+      rescue => e
+        raise FmadataParseName::ParseFailedError
       end
     end
   end

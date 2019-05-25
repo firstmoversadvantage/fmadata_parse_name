@@ -18,6 +18,12 @@ module FmadataParseName
 
         json_response = JSON(response)
 
+        if json_response['parse_status'] != 200
+          raise FmadataParseName::ParseFailedError.new(
+            "Parse status: #{json_response['parse_status']}"
+          )
+        end
+
         people = json_response['people_cache'] && json_response['people_cache'].map do |parsed_name|
           Person.new(parsed_name)
         end
@@ -30,15 +36,6 @@ module FmadataParseName
           people: people,
           organizations: organizations
         }
-      rescue RestClient::BadRequest => e
-        @status_code = e.response.code
-        @response = JSON(e.response.body)
-        @error = @response['base']['errors']
-        false
-      rescue RestClient::InternalServerError => e
-        @status_code = e.response.code
-        @response = JSON(e.response.body)
-        false
       end
     end
   end
