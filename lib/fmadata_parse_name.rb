@@ -13,5 +13,7 @@ require 'fmadata_parse_name/v2/client'
 require 'fmadata_parse_name/v2/organization'
 require 'fmadata_parse_name/v2/person'
 
+require 'fmadata_parse_name/v1_v2_comparison_utility'
+
 module FmadataParseName
 end

@@ -24,10 +24,22 @@ p2[:people].first
 
 
 
-
-
+# Parse an organization
 o1 = @v1_client.parse('First Movers Advantage, LLC')
-
 o2 = @v2_client.parse('First Movers Advantage, LLC')
 
-binding.pry
+
+
+# Parse an input that contains two names:
+# NOTE v1 doesn't support this feature, and only pulls the first name
+@v1_client.parse('Jeff and Pam McGuire')
+
+@v2_client.parse('Jeff and Pam McGuire')
+
+
+
+# Parse an input that contains a name and an organization
+# NOTE v1 doesn't support this feature, and only pulls the first name
+@v1_client.parse('Brian Long, First Movers Advantage, LLC')
+
+@v2_client.parse('Brian Long, First Movers Advantage, LLC')
