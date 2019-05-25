@@ -10,16 +10,14 @@ describe FmadataParseName::V1::Client do
       }.to raise_error('No authentication token given')
     end
 
-    it 'raises an exception if an invalid token was given' do
-      VCR.use_cassette("v1/invalid_token") do
-        expect {
-          described_class.new('abc').parse('first movers advantage')
-        }.to raise_error(RestClient::Unauthorized, '401 Unauthorized')
-      end
+    it 'raises an exception if an invalid token was given', :vcr do
+      expect {
+        described_class.new('abc').parse('first movers advantage')
+      }.to raise_error(RestClient::Unauthorized, '401 Unauthorized')
     end
 
-    it 'returns an array with a Person object if a single name is entered' do
-      VCR.use_cassette("v1/single_name") do
+    describe 'with a single name' do
+      it 'returns an array with a single Person object', :vcr do
         response = subject.parse('mr. tyler kenneth vannurden')
         expect(response[:people]).to be_a(Array)
         expect(response[:people].count).to eq(1)
@@ -32,15 +30,13 @@ describe FmadataParseName::V1::Client do
       end
     end
 
-    it 'returns an array with an Organization object if an organization is entered' do
-      VCR.use_cassette("v1/single_organization") do
-        response = subject.parse('first movers advantage, llc')
-        expect(response[:organizations].count).to eq(1)
+    it 'returns an array with an Organization object if an organization is entered', :vcr do
+      response = subject.parse('first movers advantage, llc')
+      expect(response[:organizations].count).to eq(1)
 
-        expect(response[:organizations][0]).to have_attributes(
-          name: 'First Movers Advantage, LLC',
-        )
-      end
+      expect(response[:organizations][0]).to have_attributes(
+        name: 'First Movers Advantage, LLC',
+      )
     end
   end
 end

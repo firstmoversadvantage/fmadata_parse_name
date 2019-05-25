@@ -1,4 +1,6 @@
+require 'json'
 require 'rest-client'
+
 require 'fmadata_parse_name/version'
 require 'fmadata_parse_name/organization'
 require 'fmadata_parse_name/person'
