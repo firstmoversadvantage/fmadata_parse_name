@@ -11,6 +11,7 @@ require 'fmadata_parse_name/v1/organization'
 require 'fmadata_parse_name/v1/person'
 
 require 'fmadata_parse_name/v2/client'
+require 'fmadata_parse_name/v2/response'
 require 'fmadata_parse_name/v2/organization'
 require 'fmadata_parse_name/v2/person'
 

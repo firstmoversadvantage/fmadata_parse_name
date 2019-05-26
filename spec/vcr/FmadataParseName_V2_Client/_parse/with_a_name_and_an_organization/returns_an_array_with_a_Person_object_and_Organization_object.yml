@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://v2.parse.name/api/v2/names/parse?locale=en-US&q=tyler%20vannurden,%20first%20movers%20advantage
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=tyler%20vannurden,%20first%20movers%20advantage
     body:
       encoding: US-ASCII
       string: ''
@@ -25,15 +25,15 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 25 May 2019 22:00:20 GMT
+      - Sun, 26 May 2019 17:45:26 GMT
       Server:
       - Apache/2.4.29 (Ubuntu)
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f2d1f625-f2a3-41b7-84ac-2f8134a89f35
+      - 16503e4a-5c74-475a-9058-5efe5649e667
       X-Runtime:
-      - '0.231926'
+      - '0.224188'
       X-Powered-By:
       - Phusion Passenger 5.0.30
       Etag:
@@ -50,5 +50,5 @@ http_interactions:
         \"surname\"]":1.514,"[\"surname\", \"given_name\"]":0.486,"max_candidate":["given_name","surname"]},"full_name":"Tyler
         Vannurden"}],"organization":[{"name":"First Movers Advantage"}]}'
     http_version: 
-  recorded_at: Sat, 25 May 2019 22:00:20 GMT
+  recorded_at: Sun, 26 May 2019 17:45:26 GMT
 recorded_with: VCR 4.0.0

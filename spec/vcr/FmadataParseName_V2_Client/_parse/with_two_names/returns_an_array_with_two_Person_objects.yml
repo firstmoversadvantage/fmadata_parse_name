@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://v2.parse.name/api/v2/names/parse?locale=en-US&q=Tyler%20and%20Nolan%20Vannurden
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=Tyler%20and%20Nolan%20Vannurden
     body:
       encoding: US-ASCII
       string: ''
@@ -25,15 +25,15 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 25 May 2019 22:00:19 GMT
+      - Sun, 26 May 2019 17:45:25 GMT
       Server:
       - Apache/2.4.29 (Ubuntu)
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d842cd80-8910-410a-9353-a31dc8d529e7
+      - 4b57be35-85c8-4ab4-a48b-1c57e2232dd1
       X-Runtime:
-      - '0.350057'
+      - '0.330420'
       X-Powered-By:
       - Phusion Passenger 5.0.30
       Etag:
@@ -52,5 +52,5 @@ http_interactions:
         \"surname\"]":1.293,"[\"surname\", \"given_name\"]":0.707,"max_candidate":["given_name","surname"]},"full_name":"Nolan
         Vannurden"}]}'
     http_version: 
-  recorded_at: Sat, 25 May 2019 22:00:19 GMT
+  recorded_at: Sun, 26 May 2019 17:45:25 GMT
 recorded_with: VCR 4.0.0

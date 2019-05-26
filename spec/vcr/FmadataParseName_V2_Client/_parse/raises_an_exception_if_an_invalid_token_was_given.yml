@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://v2.parse.name/api/v2/names/parse?locale=en-US&q=first%20movers%20advantage
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=first%20movers%20advantage
     body:
       encoding: US-ASCII
       string: ''
@@ -25,15 +25,15 @@ http_interactions:
       message: Unauthorized
     headers:
       Date:
-      - Sat, 25 May 2019 21:36:16 GMT
+      - Sun, 26 May 2019 17:45:23 GMT
       Server:
       - Apache/2.4.29 (Ubuntu)
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - bb18912e-8052-4c05-be4d-84173620255b
+      - 6ab98b34-c688-40c4-a8eb-42dc06156436
       X-Runtime:
-      - '0.107808'
+      - '0.059714'
       X-Powered-By:
       - Phusion Passenger 5.0.30
       Status:
@@ -46,5 +46,5 @@ http_interactions:
       encoding: UTF-8
       string: "{}"
     http_version: 
-  recorded_at: Sat, 25 May 2019 21:36:16 GMT
+  recorded_at: Sun, 26 May 2019 17:45:23 GMT
 recorded_with: VCR 4.0.0

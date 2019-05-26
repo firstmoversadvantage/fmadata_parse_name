@@ -25,9 +25,9 @@ describe FmadataParseName::V2::Client do
     context 'with a single name' do
       it 'returns an array with a Person object', :vcr do
         response = subject.parse('mr. tyler kenneth vannurden, President')
-        expect(response[:people]).to be_a(Array)
-        expect(response[:people].count).to eq(1)
-        expect(response[:people].first).to have_attributes(
+        expect(response.people).to be_a(Array)
+        expect(response.people.count).to eq(1)
+        expect(response.people.first).to have_attributes(
           salutations: 'Mr',
           given_name: 'Tyler',
           secondary_name: 'Kenneth',
@@ -38,22 +38,22 @@ describe FmadataParseName::V2::Client do
 
       it 'returns an empty array for the :organizations key', :vcr do
         response = subject.parse('mr. tyler kenneth vannurden, President')
-        expect(response[:organizations]).to be_a(Array)
-        expect(response[:organizations].empty?).to be true
+        expect(response.organizations).to be_a(Array)
+        expect(response.organizations.empty?).to be true
       end
     end
 
     context 'with two names' do
       it 'returns an array with two Person objects', :vcr do
         response = subject.parse('Tyler and Nolan Vannurden')
-        expect(response[:people].count).to eq(2)
+        expect(response.people.count).to eq(2)
 
-        expect(response[:people][0]).to have_attributes(
+        expect(response.people[0]).to have_attributes(
           given_name: 'Tyler',
           surname: 'Vannurden',
         )
 
-        expect(response[:people][1]).to have_attributes(
+        expect(response.people[1]).to have_attributes(
           given_name: 'Nolan',
           surname: 'Vannurden',
         )
@@ -63,32 +63,32 @@ describe FmadataParseName::V2::Client do
     context 'with an organization' do
       it 'returns an array with an Organization object', :vcr do
         response = subject.parse('first movers advantage')
-        expect(response[:organizations].count).to eq(1)
+        expect(response.organizations.count).to eq(1)
 
-        expect(response[:organizations][0]).to have_attributes(
+        expect(response.organizations.first).to have_attributes(
           name: 'First Movers Advantage',
         )
       end
 
       it 'returns an empty array for the :people key', :vcr do
         response = subject.parse('first movers advantage')
-        expect(response[:people]).to be_a(Array)
-        expect(response[:people].empty?).to be true
+        expect(response.people).to be_a(Array)
+        expect(response.people.empty?).to be true
       end
     end
 
     context 'with a name and an organization' do
       it 'returns an array with a Person object and Organization object', :vcr do
         response = subject.parse('tyler vannurden, first movers advantage')
-        expect(response[:people].count).to eq(1)
-        expect(response[:organizations].count).to eq(1)
+        expect(response.people.count).to eq(1)
+        expect(response.organizations.count).to eq(1)
 
-        expect(response[:people].first).to have_attributes(
+        expect(response.people.first).to have_attributes(
           given_name: 'Tyler',
           surname: 'Vannurden',
         )
 
-        expect(response[:organizations][0]).to have_attributes(
+        expect(response.organizations[0]).to have_attributes(
           name: 'First Movers Advantage',
         )
       end

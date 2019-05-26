@@ -43,3 +43,10 @@ o2 = @v2_client.parse('First Movers Advantage, LLC')
 @v1_client.parse('Brian Long, First Movers Advantage, LLC')
 
 @v2_client.parse('Brian Long, First Movers Advantage, LLC')
+
+
+
+
+# Compare the results of a v1 parse with a v2 parse
+# This could be useful for phasing the v2 parser into your system,
+# and help you understand new scenarios to code for

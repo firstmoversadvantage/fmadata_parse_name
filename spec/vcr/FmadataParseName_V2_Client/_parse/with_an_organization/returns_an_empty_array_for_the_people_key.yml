@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://v2.parse.name/api/v2/names/parse?locale=en-US&q=first%20movers%20advantage
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=first%20movers%20advantage
     body:
       encoding: US-ASCII
       string: ''
@@ -25,15 +25,15 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 25 May 2019 22:06:04 GMT
+      - Sun, 26 May 2019 17:45:26 GMT
       Server:
       - Apache/2.4.29 (Ubuntu)
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 56ea0ddd-c517-4c40-9dbe-4107482ec031
+      - 852b24b0-58ee-4faa-85df-a55deb9ecb25
       X-Runtime:
-      - '0.087260'
+      - '0.098928'
       X-Powered-By:
       - Phusion Passenger 5.0.30
       Etag:
@@ -49,5 +49,5 @@ http_interactions:
       string: '{"base":{"input":"first movers advantage","locale":"en-US"},"organization":[{"name":"First
         Movers Advantage"}]}'
     http_version: 
-  recorded_at: Sat, 25 May 2019 22:06:04 GMT
+  recorded_at: Sun, 26 May 2019 17:45:26 GMT
 recorded_with: VCR 4.0.0
