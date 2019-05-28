@@ -37,7 +37,8 @@ module FmadataParseName
 
         name_metadata.each do |meta|
           unless v1_person1.send(meta) == v2_person1.send(meta)
-            @diff_message = "metadata: #{meta} failed. v1: #{v1_person1.send(meta)} v2: #{v2_person1.send(meta)}"
+            @diff_message = "metadata: #{meta} failed. v1: #{v1_person1.send(meta) || 'null'} v2: #{v2_person1.send(meta)}"
+            return false
           end
         end
 

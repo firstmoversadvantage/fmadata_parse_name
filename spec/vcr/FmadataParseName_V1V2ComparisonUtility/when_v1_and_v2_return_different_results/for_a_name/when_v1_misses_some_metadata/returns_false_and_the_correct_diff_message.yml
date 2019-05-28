@@ -1,0 +1,113 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://parse.name/names/parse.json?q=Tyler%20Vannurden,%20Agent&token=c104048a-1f32-467c-9022-4b90d8893f85
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Timeout:
+      - '5'
+      Host:
+      - parse.name
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 May 2019 23:01:05 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.008891'
+      X-Request-Id:
+      - 2025dcb6-99c0-419e-9b9e-2e5768e4abbc
+      X-Powered-By:
+      - Phusion Passenger 5.3.4
+      Set-Cookie:
+      - _parse_name_session=dVlCMFhsbkRYdG1xUVZoQTBNSXRoM2ZVQTVReXFLbU40VFQxVUJSbXE2ZzJ4ZFAvejF0emFZY3V4cVpFTGhXbkd3c0Z1bTV1K2VRM0ZwUFlBc1Y2dXJyVUdYSVh5bGZRSnBUTTgyV2daNlhZQnlORmlVZERJNWg1NjQ1U1RYdnUtLWNhYm5ZRE9HNHlYMmVjVlRuSENIbVE9PQ%3D%3D--a03b0851542b31cde9877b8782bdc897a298cf45;
+        path=/; HttpOnly
+      Etag:
+      - W/"c4ffe73710cfdc992b1e3285b060ce5b"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"name_like_score":2,"id":9198824,"uuid":"5eeaa231-26f8-45c4-b237-04358b3f9f36","language":"en","input":"tyler
+        vannurden, agent","parse_status":200,"parse_method":"R","parser_version":24,"contains_aka_or_fka":false,"people_cache":[{"id":444870,"given_name":"Tyler","surname":"Vannurden","secondary_name":"","suffix":"","prefix":"","salutation":"","alternate_name":"","credentials":"","uuid":"337e1d81-5e98-4eda-921c-2d7bcf82f165","language":"en","gender":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":"2018-02-06T16:04:35.000Z","updated_at":"2018-02-06T16:04:35.000Z"}],"organizations_cache":[],"job_titles_cache":null,"credentials_cache":null,"email_addresses_cache":null,"telephones_cache":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":"2019-05-28T23:00:11.000Z","updated_at":"2019-05-28T23:00:11.000Z"}'
+    http_version: 
+  recorded_at: Tue, 28 May 2019 23:01:06 GMT
+- request:
+    method: get
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=Tyler%20Vannurden,%20Agent
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Authorization:
+      - 66039622-9040-4964-bfe2-8ce4d1176724
+      Timeout:
+      - '5'
+      Host:
+      - v2.parse.name
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 May 2019 23:01:06 GMT
+      Server:
+      - Apache/2.4.29 (Ubuntu)
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Request-Id:
+      - e2cc2621-d500-4220-a496-cd9b737f4318
+      X-Runtime:
+      - '0.134986'
+      X-Powered-By:
+      - Phusion Passenger 5.0.30
+      Etag:
+      - W/"2af60e2b68233bd1173768f9b87bc44a"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"base":{"input":"Tyler Vannurden, Agent","locale":"en-US"},"name":[{"given_name":"Tyler","surname":"Vannurden","job_title":["Agent"],"input_placement_scores":{"[\"given_name\",
+        \"surname\"]":1.514,"[\"surname\", \"given_name\"]":0.486,"max_candidate":["given_name","surname"]},"full_name":"Tyler
+        Vannurden"}]}'
+    http_version: 
+  recorded_at: Tue, 28 May 2019 23:01:06 GMT
+recorded_with: VCR 4.0.0

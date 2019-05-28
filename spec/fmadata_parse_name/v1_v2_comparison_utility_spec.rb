@@ -86,12 +86,20 @@ describe FmadataParseName::V1V2ComparisonUtility do
       end
     end
 
-    # context 'for an organization' do
-
-    # end
-
     context 'for a name' do
+      context 'when v1 misses job title metadata' do
+        it 'returns false and the correct #diff message', :vcr do
+          name = 'Tyler Vannurden, Agent'
 
+          v1_result = v1_client.parse(name)
+          v2_result = v2_client.parse(name)
+
+          comparison = described_class.new(input: name, v1_result: v1_result, v2_result: v2_result)
+
+          expect(comparison.compare).to be false
+          expect(comparison.diff_message).to eq('metadata: job_titles failed. v1: null v2: ["Agent"]')
+        end
+      end
     end
 
     context 'when v2 returns two names and v1 returns one' do
