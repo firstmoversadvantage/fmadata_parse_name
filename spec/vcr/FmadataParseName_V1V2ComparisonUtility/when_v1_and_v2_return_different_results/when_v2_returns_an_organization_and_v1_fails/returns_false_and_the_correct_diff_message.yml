@@ -1,0 +1,111 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://parse.name/names/parse.json?q=First%20Movers%20Advantage&token=c104048a-1f32-467c-9022-4b90d8893f85
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Timeout:
+      - '5'
+      Host:
+      - parse.name
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 May 2019 22:48:17 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.021894'
+      X-Request-Id:
+      - 6929914a-4f9c-48a8-ac7f-9768e088b2ef
+      X-Powered-By:
+      - Phusion Passenger 5.3.4
+      Set-Cookie:
+      - _parse_name_session=STNWZEhFenU2NmVQMnZQcXBhQWZKNThMZytxTHU3QTNwaGpYM3ZjNzNnOWcvazVWOGtVZXZYa3hOZzNQQ2JLWWNrbi9Ob2lBQXU5YUNwUXRSblFJN2RuRVZqeGZmTFRxNHdINU1vRzczZFFnNkExS1pUbDdwMzZaVHoxZWJudGFDbFVPeHYweTNlNE1XMkZabVpuQlltNkxFVDNlSlZpZ2theGxBY1JnR0FGYjBZU3U4UU5EdFBwbTNqODJHUUU0KytWRGxWd0ZCaCtoZE5JUWpoSmdSdz09LS04WGJHRTM3ZjdrNElWc0FEdS92OXdnPT0%3D--9f910bccf9270ffb85018f41289db9149c5b83c3;
+        path=/; HttpOnly
+      Etag:
+      - W/"b4d45066e2f4025f28e6c5327d434464"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":null,"uuid":null,"language":"en","input":"first movers advantage","parse_status":602,"parse_method":"R","parser_version":24,"contains_aka_or_fka":false,"people_cache":null,"organizations_cache":null,"job_titles_cache":null,"credentials_cache":null,"email_addresses_cache":null,"telephones_cache":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":null,"updated_at":null,"name_like_score":0}'
+    http_version: 
+  recorded_at: Tue, 28 May 2019 22:48:17 GMT
+- request:
+    method: get
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=First%20Movers%20Advantage
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Authorization:
+      - 66039622-9040-4964-bfe2-8ce4d1176724
+      Timeout:
+      - '5'
+      Host:
+      - v2.parse.name
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 May 2019 22:48:17 GMT
+      Server:
+      - Apache/2.4.29 (Ubuntu)
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Request-Id:
+      - ef4b6c72-7f67-4b93-bc81-36a913d2bd4d
+      X-Runtime:
+      - '0.092995'
+      X-Powered-By:
+      - Phusion Passenger 5.0.30
+      Etag:
+      - W/"85f729433daf42e17afa117cb0d45c90"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"base":{"input":"First Movers Advantage","locale":"en-US"},"organization":[{"name":"First
+        Movers Advantage"}]}'
+    http_version: 
+  recorded_at: Tue, 28 May 2019 22:48:18 GMT
+recorded_with: VCR 4.0.0

@@ -39,7 +39,8 @@ o2 = @v2_client.parse('First Movers Advantage, LLC')
 
 
 # Parse an input that contains a name and an organization
-# NOTE v1 doesn't support this feature, and only pulls the first name
+# NOTE v1 doesn't support this feature, and only returns the first name
+# that it finds
 @v1_client.parse('Brian Long, First Movers Advantage, LLC')
 
 @v2_client.parse('Brian Long, First Movers Advantage, LLC')

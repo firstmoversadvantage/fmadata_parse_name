@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://parse.name/names/parse.json?q=a%20b%20c%20d%20e%20f%20g%20h%20i%20j%20k%20l%20m%20n%20o%20p&token=c104048a-1f32-467c-9022-4b90d8893f85
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Timeout:
+      - '5'
+      Host:
+      - parse.name
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 May 2019 22:24:28 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.033593'
+      X-Request-Id:
+      - e2e9c9c2-415b-4093-8d5e-6eba998a813a
+      X-Powered-By:
+      - Phusion Passenger 5.3.4
+      Set-Cookie:
+      - _parse_name_session=UmVGbVZ3YTUwY1JVN2J5aXQveVlQMjNzeTZmRXBZcldNMFhTclZnTGY4bDVVMXMrNEFiZGY0WDJRL2JaUURZemxrc3FBU2hrMHdqbVdac29TNy9hMEd2Z3d2Z3pYU0RhOXA3QmR5Y0UxSFRiV21ZRGN3SS8zQ2ZLVUtrdmlwME1kSmk0NW5RTkpPeldnNENNMFppeXBPKzd4NWNCTVAxcUZEamlhSlVjbzVkd3ZGNTVzRDFpWlhmZmJQLzhUN0hJLS1HQ3M1aUx0OHJqMC9ic3F4cmVPdTJnPT0%3D--a224114a0e0f4156bb68c113a62bd8fa678e1c30;
+        path=/; HttpOnly
+      Etag:
+      - W/"4cb2b00f3ab63928aa3d01e51edfa64c"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":null,"uuid":null,"language":"en","input":"a b c d e f g h i j
+        k l m n o p","parse_status":602,"parse_method":"R","parser_version":24,"contains_aka_or_fka":false,"people_cache":null,"organizations_cache":null,"job_titles_cache":null,"credentials_cache":null,"email_addresses_cache":null,"telephones_cache":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":null,"updated_at":null,"name_like_score":16}'
+    http_version: 
+  recorded_at: Tue, 28 May 2019 22:24:28 GMT
+recorded_with: VCR 4.0.0

@@ -1,0 +1,112 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://parse.name/names/parse.json?q=a%20b%20c%20d%20e%20f%20g%20h%20i%20j%20k%20l%20m%20n%20o%20p&token=c104048a-1f32-467c-9022-4b90d8893f85
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Timeout:
+      - '5'
+      Host:
+      - parse.name
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 May 2019 22:31:52 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.031744'
+      X-Request-Id:
+      - 0a02863a-3440-4657-b1dd-44c9b47d4c09
+      X-Powered-By:
+      - Phusion Passenger 5.3.4
+      Set-Cookie:
+      - _parse_name_session=Rk5sTnY0UGpJenJocE5IMXZyVHhrR1BQVWo4OC9uWW1HcnVhQTRFcjcvTUZybEw0T0cweUZXdWFKdVZNNWhRUTFiRXJuV2dZbjQrOTVrSlNWRkwzaEpYblQvNHJRb1JBR2t5TDZ6SDNQN1kxZ3Jpc2plRElQZDVNR2xDQmppYUl4UWZJM08vZ2dwYmNXN0FMNkM3dDkyODA3YUZSV2xmMC9sN2ZKRytiNnFVV1hZVllXbUFGM1IyVXA5bnRaM0FILS0xbWwwTVk3ZVJ2T2xEUmdSUUM0dGNRPT0%3D--3a80488f19e7f3972375e86693fb801dc00d8160;
+        path=/; HttpOnly
+      Etag:
+      - W/"4cb2b00f3ab63928aa3d01e51edfa64c"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":null,"uuid":null,"language":"en","input":"a b c d e f g h i j
+        k l m n o p","parse_status":602,"parse_method":"R","parser_version":24,"contains_aka_or_fka":false,"people_cache":null,"organizations_cache":null,"job_titles_cache":null,"credentials_cache":null,"email_addresses_cache":null,"telephones_cache":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":null,"updated_at":null,"name_like_score":16}'
+    http_version: 
+  recorded_at: Tue, 28 May 2019 22:31:52 GMT
+- request:
+    method: get
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=a%20b%20c%20d%20e%20f%20g%20h%20i%20j%20k%20l%20m%20n%20o%20p
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Authorization:
+      - 66039622-9040-4964-bfe2-8ce4d1176724
+      Timeout:
+      - '5'
+      Host:
+      - v2.parse.name
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Tue, 28 May 2019 22:31:52 GMT
+      Server:
+      - Apache/2.4.29 (Ubuntu)
+      Cache-Control:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Request-Id:
+      - 9a12be54-1dae-4b0e-945f-3360b80ef408
+      X-Runtime:
+      - '0.106424'
+      X-Powered-By:
+      - Phusion Passenger 5.0.30
+      Status:
+      - 400 Bad Request
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"base":{"input":"a b c d e f g h i j k l m n o p","locale":"en-US","errors":{"input":["is
+        suspiciously long"]}}}'
+    http_version: 
+  recorded_at: Tue, 28 May 2019 22:31:52 GMT
+recorded_with: VCR 4.0.0

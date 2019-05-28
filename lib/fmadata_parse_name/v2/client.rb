@@ -20,27 +20,9 @@ module FmadataParseName
 
         json_response = JSON(response)
 
-        # people = []
-        # json_response['name'] && json_response['name'].each do |parsed_name|
-        #   people << Person.new(parsed_name)
-        # end
-
-        # organizations = []
-        # json_response['organization'] && json_response['organization'].each do |parsed_org|
-        #   organizations << Organization.new(parsed_org)
-        # end
-
-        # {
-        #   people: people,
-        #   organizations: organizations
-        # }
-
         Response.new(json_response, 200)
       rescue RestClient::BadRequest => e
-        # json_response = JSON(e.response.body)
-        raise FmadataParseName::ParseFailedError
-      # rescue RestClient::ServerError => e
-      #   raise FmadataParseName::ParseFailedError
+        Response.new(JSON(e.response.body), 400)
       end
     end
   end

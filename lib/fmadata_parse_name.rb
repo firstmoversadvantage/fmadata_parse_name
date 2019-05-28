@@ -7,6 +7,7 @@ require 'fmadata_parse_name/organization'
 require 'fmadata_parse_name/person'
 
 require 'fmadata_parse_name/v1/client'
+require 'fmadata_parse_name/v1/response'
 require 'fmadata_parse_name/v1/organization'
 require 'fmadata_parse_name/v1/person'
 

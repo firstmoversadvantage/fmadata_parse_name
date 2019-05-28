@@ -5,14 +5,14 @@ module FmadataParseName
 
       def initialize(v2_json_response, response_code)
         @response_code = response_code
+        @people = []
+        @organizations = []
 
         if @response_code == 200
-          @people = []
           v2_json_response['name'] && v2_json_response['name'].each do |parsed_name|
             @people << Person.new(parsed_name)
           end
 
-          @organizations = []
           v2_json_response['organization'] && v2_json_response['organization'].each do |parsed_org|
             @organizations << Organization.new(parsed_org)
           end
