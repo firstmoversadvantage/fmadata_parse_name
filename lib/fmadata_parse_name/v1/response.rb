@@ -1,17 +1,11 @@
 module FmadataParseName
   module V1
     class Response
-      attr_reader :people, :organizations#, :response_code
+      attr_reader :people, :organizations
 
       def initialize(json_response, response_code)
         @json_response = json_response
         @response_code = response_code
-
-        # unless v1_json_response['parse_status'] == 200
-        #   raise FmadataParseName::ParseFailedError.new(
-        #     "Parse status: #{v1_json_response['parse_status']}"
-        #   )
-        # end
 
         @people = []
         @json_response['people_cache'] && @json_response['people_cache'].each do |parsed_name|

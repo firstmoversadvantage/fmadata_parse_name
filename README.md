@@ -60,6 +60,13 @@ The `#parse` method will return a `Response` object, which responds to the follo
 #errors => Hash of errors returned from the parser
 ```
 
+After parsing, you should always check whether or not the parse was successful, because exceptions are not raised automatically if a parse was unsuccessful.
+
+```ruby
+response = @v2_client.parse('Tyler')
+response.success? => false
+```
+
 ### Parsing against the v1 name parser
 
 You should only implement the `FmadataParseName::V1` classes in your application if you already use the v1 name parser **and** are interested in seeing the diff between a v1 parse and a v2 parse. Again, the v1 name parser will soon be retired in lieu of v2.
