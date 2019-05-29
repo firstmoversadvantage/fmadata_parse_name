@@ -7,13 +7,9 @@ A Ruby gem for communicating with the v1 and v2 name parsing API services.
 
 ## Installation
 
-To install using [Bundler][bundler]:
-
 ```ruby
 gem 'fmadata_parse_name'
 ```
-
-To manually install `fmadata_parse_name` via [Rubygems][rubygems] simply gem install:
 
 ```bash
 gem install fmadata_parse_name
@@ -99,8 +95,7 @@ v1_v2_comparison = FmadataParseName::V1V2ComparisonUtility.new(
   v2_result: v2_response
 )
 
-v1_v2_comparison.compare => true
-# Which returns `true` when they both returned the same result
+v1_v2_comparison.compare => true # returns `true` when they both returned the same result
 
 
 
