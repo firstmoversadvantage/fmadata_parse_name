@@ -1,5 +1,4 @@
 require 'fmadata_parse_name'
-require 'pry'
 
 v1_api_token = 'c104048a-1f32-467c-9022-4b90d8893f85'
 v2_api_token = '66039622-9040-4964-bfe2-8ce4d1176724'
@@ -51,3 +50,30 @@ o2 = @v2_client.parse('First Movers Advantage, LLC')
 # Compare the results of a v1 parse with a v2 parse
 # This could be useful for phasing the v2 parser into your system,
 # and help you understand new scenarios to code for
+
+# When both parsers return the same thing
+input = 'First Movers Advantage, LLC'
+o1 = @v1_client.parse(input)
+o2 = @v2_client.parse(input)
+
+compare1 = FmadataParseName::V1V2ComparisonUtility.new(
+  input: input,
+  v1_result: o1,
+  v2_result: o2
+)
+
+compare1.compare # => true
+
+
+
+
+# When parsers return something different
+input2 = 'Bill and Melinda Gates'
+
+v1 = @v1_client.parse(input2)
+v2 = @v2_client.parse(input2)
+
+compare2 = FmadataParseName::V1V2ComparisonUtility.new(input: input2, v1_result: v1, v2_result: v2)
+
+compare2.compare # => false
+compare2.diff_message # => 'v1 people count: 1 v2 people count: 2'
