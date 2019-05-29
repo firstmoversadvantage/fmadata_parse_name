@@ -1,7 +1,7 @@
 module FmadataParseName
   module V1
     class Response
-      attr_reader :people, :organizations, :response_code
+      attr_reader :people, :organizations#, :response_code
 
       def initialize(json_response, response_code)
         @json_response = json_response

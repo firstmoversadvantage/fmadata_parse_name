@@ -1,7 +1,9 @@
 # fmadata_parse_name
-A Ruby gem for communicating with the v1 and v2 name parsing services.
+A Ruby gem for communicating with the v1 and v2 name parsing API services.
 
-Note: the format of this readme was inspired by the Twilio rubygem readme, https://github.com/twilio/twilio-ruby/blob/master/README.md
+[V1 Name Parser API](http://parse.name)
+
+[V2 Name Parser API](https://v2.parse.name)
 
 ## Installation
 
@@ -19,141 +21,99 @@ gem install fmadata_parse_name
 
 ## Getting Started
 
-### Setup Work
+### Setup
+
+There are two different client classes for interraction. One for the v1 name parser, and one for v2. **For new development, you should only use version 2, since version 1 will soon be retired.** The v2 parser has many advantages over v1, and are outlined [here](https://v2.parse.name).
 
 ```ruby
 require 'fmadata_parse_name'
 
-# put your own credentials here
-api_token = 'my-api-token'
+# Find your own credentials by visiting https://v2.parse.name/users/edit
+v2_api_token = 'my-v2-api-token'
 
-# set up a client to talk to the Twilio REST API
-@client = Twilio::REST::Client.new account_sid, auth_token
+# Initialize a v2 client
+@v2_client = FmadataParseName::V2::Client.new(v2_api_token)
 ```
 
-### Make a Call
+### Make some calls by calling `FmadataParseName::V2::Client#parse`
 
 ```ruby
-@client.api.account.calls.create(
-  from: '+14159341234',
-  to: '+16105557069',
-  url: 'http://example.com'
+# Parse an input that results in a name
+@v2_client.parse('Tyler Kenneth Van Nurden')
+
+# Parse an input that results in an organization
+@v2_client.parse('First Movers Advantage, LLC')
+
+# Parse an input that results in a name + an organization
+@v2_client.parse('Tyler Van Nurden, First Movers Advantage')
+
+# Parse an input that results in two names
+@v2_client.parse('Jeff and Pam McGuire')
+```
+
+The `#parse` method will return a `Response` object, which responds to the following instance methods:
+```
+#people => Array of People objects
+#organizations => Array of Organization objects
+#success? => True or False representing whether or not we could parse the input succcessfully
+#failure?
+#errors => Hash of errors returned from the parser
+```
+
+### Parsing against the v1 name parser
+
+You should only implement the `FmadataParseName::V1` classes in your application if you already use the v1 name parser **and** are interested in seeing the diff between a v1 parse and a v2 parse. Again, the v1 name parser will soon be retired in lieu of v2.
+
+```ruby
+v1_api_token = 'my-v1-api-token'
+
+@v1_client = FmadataParseName::V1::Client.new(v1_api_token)
+
+@v1_client.parse('Tyler Kenneth Van Nurden')
+
+@v1_client.parse('First Movers Advantage, LLC')
+
+# v1 will only return the first name, Jeff McGuire
+@v1_client.parse('Jeff and Pam McGuire')
+```
+
+### Comparing v1 and v2 parses via `FmadataParseName::V1V2ComparisonUtility`
+
+```ruby
+# When parsers return the same thing:
+input = 'Tyler Kenneth Van Nurden'
+
+v1_response = @v1_client.parse(input)
+v2_response = @v2_client.parse(input)
+
+v1_v2_comparison = FmadataParseName::V1V2ComparisonUtility.new(
+  input: input,
+  v1_result: v1_response,
+  v2_result: v2_response
 )
-```
 
-### Send an SMS
+v1_v2_comparison.compare => true
+# Which returns `true` when they both returned the same result
 
-```ruby
-@client.api.account.messages.create(
-  from: '+14159341234',
-  to: '+16105557069',
-  body: 'Hey there!'
+
+
+# When parsers return something different:
+input2 = 'Bill and Melinda Gates'
+
+v1_response = @v1_client.parse(input2)
+v2_response = @v2_client.parse(input2)
+
+v1_v2_comparison = FmadataParseName::V1V2ComparisonUtility.new(
+  input: input2,
+  v1_result: v1_response,
+  v2_result: v2_response
 )
+
+v1_v2_comparison.compare # => false
+v1_v2_comparison.diff_message # => 'v1 people count: 1 v2 people count: 2'
 ```
 
-### List your SMS Messages
-
-```ruby
-@client.api.account.messages.list
-```
-
-### Fetch a single SMS message by Sid
-
-```ruby
-# put the message sid you want to retrieve here:
-message_sid = 'SMxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-@client.api.account.messages(message_sid).fetch
-```
-
-### Customizing your HTTP Client
-twilio-ruby uses [Faraday][faraday] to make HTTP requests. You can tell
-Twilio::REST::Client to use any of the Faraday adapters like so:
-
-```ruby
-@client.http_client.adapter = :typhoeus
-```
-
-## Getting Started With Client Capability Tokens
-
-If you just need to generate a Capability Token for use with Twilio Client, you
-can do this:
-
-```ruby
-require 'twilio-ruby'
-
-# put your own account credentials here:
-account_sid = 'ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-auth_token = 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
-
-# set up
-capability = Twilio::JWT::ClientCapability.new account_sid, auth_token
-
-# allow outgoing calls to an application
-outgoing_scope = Twilio::JWT::ClientCapability::OutgoingClientScope.new 'AP11111111111111111111111111111111'
-capability.add_scope(outgoing_scope)
-
-# allow incoming calls to 'andrew'
-incoming_scope = Twilio::JWT::ClientCapability::IncomingClientScope.new 'andrew'
-capability.add_scope(incoming_scope)
-
-# generate the token string
-@token = capability.to_s
-```
-
-There is a slightly more detailed document in the [Capability][capability]
-section of the wiki.
-
-## Getting Started With TwiML
-
-You can construct a TwiML response like this:
-
-```ruby
-require 'twilio-ruby'
-
-response = Twilio::TwiML::VoiceResponse.new do |r|
-  r.say(message: 'hello there', voice: 'alice')
-  r.dial(caller_id: '+14159992222') do |d|
-    d.client 'jenny'
-  end
-end
-
-# print the result
-puts response.to_s
-```
-
-This will print the following (except for the whitespace):
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<Response>
-  <Say voice="alice">hello there</Say>
-  <Dial callerId="+14159992222">
-    <Client>jenny</Client>
-  </Dial>
-</Response>
-```
-
-## Supported Ruby Versions
-
-This library supports and is [tested against][travis] the following Ruby
-implementations:
-
-- Ruby 2.5.0
-- Ruby 2.4.0
-- Ruby 2.3.0
-- Ruby 2.2.0
-
-[capability]: https://github.com/twilio/twilio-ruby/wiki/JWT-Tokens
-[examples]: https://github.com/twilio/twilio-ruby/blob/master/examples
-[documentation]: http://twilio.github.io/twilio-ruby
-[wiki]: https://github.com/twilio/twilio-ruby/wiki
-[bundler]: http://bundler.io
-[rubygems]: http://rubygems.org
-[gem]: https://rubygems.org/gems/twilio
-[travis]: http://travis-ci.org/twilio/twilio-ruby
-[upgrade]: https://github.com/twilio/twilio-ruby/wiki/Ruby-Version-5.x-Upgrade-Guide
-[issues]: https://github.com/twilio/twilio-ruby/issues
-[faraday]: https://github.com/lostisland/faraday
+The intent of the `diff_message` is to integrate it into your application's logging so that differences can be reviewed and coded for.
 
 ## Making changes to the gem
 

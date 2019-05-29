@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "rest-client", "~> 2.0"
   s.add_development_dependency "rspec", "~> 3.4"
   s.add_development_dependency "vcr", "~> 4.0"
-  s.add_development_dependency "webmock", "~> 1.24"
+  s.add_development_dependency "webmock", "~> 2.3"
   s.add_development_dependency "pry", "~> 0.12"
 end
