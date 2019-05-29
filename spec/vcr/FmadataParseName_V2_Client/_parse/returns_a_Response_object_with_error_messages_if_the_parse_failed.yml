@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=tyler
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Authorization:
+      - 66039622-9040-4964-bfe2-8ce4d1176724
+      Timeout:
+      - '5'
+      Host:
+      - v2.parse.name
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 29 May 2019 02:24:20 GMT
+      Server:
+      - Apache/2.4.29 (Ubuntu)
+      Cache-Control:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Request-Id:
+      - 2cbf4878-66a3-4c24-9e05-ebbca6a34e99
+      X-Runtime:
+      - '0.184898'
+      X-Powered-By:
+      - Phusion Passenger 5.0.30
+      Status:
+      - 400 Bad Request
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"base":{"input":"tyler","locale":"en-US","errors":{"input":["could
+        not be distinguished between a name or organization"]}}}'
+    http_version: 
+  recorded_at: Wed, 29 May 2019 02:24:20 GMT
+recorded_with: VCR 4.0.0

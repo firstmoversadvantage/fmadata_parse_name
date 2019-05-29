@@ -1,14 +1,15 @@
 module FmadataParseName
   module V2
     class Response
-      attr_reader :people, :organizations, :response_code
+      attr_reader :people, :organizations, :code
 
       def initialize(v2_json_response, response_code)
-        @response_code = response_code
+        @json_response = v2_json_response
+        @code = response_code
         @people = []
         @organizations = []
 
-        if @response_code == 200
+        if @code == 200
           v2_json_response['name'] && v2_json_response['name'].each do |parsed_name|
             @people << Person.new(parsed_name)
           end
@@ -22,7 +23,7 @@ module FmadataParseName
       end
 
       def success?
-        @response_code == 200
+        @code == 200
       end
 
       def failure?
@@ -30,7 +31,11 @@ module FmadataParseName
       end
 
       def errors
-
+        if success?
+          {}
+        else
+          @json_response['base']['errors']
+        end
       end
     end
   end

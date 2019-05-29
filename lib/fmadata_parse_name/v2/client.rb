@@ -21,8 +21,10 @@ module FmadataParseName
         json_response = JSON(response)
 
         Response.new(json_response, 200)
-      rescue RestClient::BadRequest => e
-        Response.new(JSON(e.response.body), 400)
+      rescue RestClient::Exception => e
+        raise e if e.response.code == 401
+
+        Response.new(JSON(e.response.body), e.response.code)
       end
     end
   end

@@ -16,11 +16,37 @@ describe FmadataParseName::V2::Client do
       }.to raise_error(RestClient::Unauthorized, '401 Unauthorized')
     end
 
-    # it 'raises an exception with error messages if the parse failed', :vcr do
-    #   expect {
-    #     subject.parse('tyler')
-    #   }.to raise_error(FmadataParseName::ParseFailedError)
-    # end
+    it 'returns a Response object if the parse failed', :vcr do
+      response = subject.parse('tyler')
+      expect(response).to be_a(FmadataParseName::V2::Response)
+    end
+
+    describe '#errors' do
+      context 'when the parse succeeded' do
+        it 'returns an empty hash', :vcr do
+          response = subject.parse('first movers advantage')
+          expect(response.errors).to eq({})
+        end
+      end
+
+      context 'when the parse failed' do
+        it 'returns the error message due to ambiguous input', :vcr do
+          response = subject.parse('tyler')
+          expect(response.errors).to eq(
+            {
+              "input" => ["could not be distinguished between a name or organization"]
+            }
+          )
+        end
+
+        it 'returns the error message due to given name being same as surname', :vcr do
+          response = subject.parse('tyler tyler')
+          expect(response.errors).to eq(
+            { "input" => ["given_name was the same as surname"] }
+          )
+        end
+      end
+    end
 
     context 'with a single name' do
       it 'returns an array with a Person object', :vcr do
