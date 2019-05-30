@@ -13,7 +13,6 @@ module FmadataParseName
         @prefixes = v1_response_without_blanks['prefix']
         @suffixes = v1_response_without_blanks['suffix']
         @alternate_name = v1_response_without_blanks['alternate_name']
-        # @name_like_score = v1_response_without_blanks['name_like_score']
       end
 
       private
@@ -22,10 +21,6 @@ module FmadataParseName
         hsh.reject do |k, v|
           v == ''
         end
-      end
-
-      def nilify_if_empty(str)
-        str == '' ? nil : str
       end
     end
   end

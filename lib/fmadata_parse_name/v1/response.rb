@@ -30,6 +30,8 @@ module FmadataParseName
 
       end
 
+      private
+
       def name_like_score
         @json_response['name_like_score']
       end

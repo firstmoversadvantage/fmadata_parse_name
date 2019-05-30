@@ -13,15 +13,6 @@ module FmadataParseName
         @suffixes = v2_parse_response['suffix']
         @alternate_name = v2_parse_response['alternate_name']
       end
-
-      def is_a_team?
-        false
-      end
-
-      # mostly to preserve v1 name parser functionality
-      def [](key)
-
-      end
     end
   end
 end
