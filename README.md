@@ -8,11 +8,8 @@ A Ruby gem for communicating with the v1 and v2 name parsing API services.
 ## Installation
 
 ```ruby
-gem 'fmadata_parse_name'
-```
-
-```bash
-gem install fmadata_parse_name
+# Gemfile
+gem 'fmadata_parse_name', '~> 1.0', git: 'git@github.com:firstmoversadvantage/fmadata_parse_name.git'
 ```
 
 ## Getting Started
