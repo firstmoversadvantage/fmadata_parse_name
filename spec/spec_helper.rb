@@ -1,5 +1,5 @@
 require 'vcr'
-require 'webmock'
+# require 'webmock'
 require 'pry'
 require 'fmadata_parse_name'
 
@@ -22,7 +22,8 @@ require 'fmadata_parse_name'
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/vcr'
   # your HTTP request service. You can also use fakeweb, webmock, and more
-  c.hook_into :webmock
+  c.hook_into :fakeweb
+  # https://relishapp.com/vcr/vcr/v/3-0-1/docs/configuration/hook-into
   c.configure_rspec_metadata!
 end
 

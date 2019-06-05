@@ -5,7 +5,7 @@ module FmadataParseName
   class V1V2ComparisonUtility
     attr_reader :diff_message
 
-    def initialize(input:, v1_result:, v2_result:)
+    def initialize(input, v1_result, v2_result)
       @v1 = v1_result
       @v2 = v2_result
       @input = input
