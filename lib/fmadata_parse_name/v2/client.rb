@@ -12,10 +12,10 @@ module FmadataParseName
 
         response = RestClient.get(
           'https://v2.parse.name/api/v2/names/parse',
-          params: { q: input, locale: 'en-US' },
-          Authorization: @token,
-          Accept: 'application/json',
-          timeout: 5
+          :params => { :q => input, :locale => 'en-US' },
+          :Authorization => @token,
+          :Accept => 'application/json',
+          :timeout => 5
         )
 
         json_response = JSON(response)

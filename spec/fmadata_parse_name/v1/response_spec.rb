@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe FmadataParseName::V1::Response do
   let(:client) do
-    FmadataParseName::V1::Client.new('c104048a-1f32-467c-9022-4b90d8893f85')
+    FmadataParseName::V1::Client.new('7d112490-ff1e-4759-9af1-a3b30a2cc87a')
   end
 
   describe '#success?' do

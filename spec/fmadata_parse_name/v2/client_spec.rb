@@ -54,11 +54,11 @@ describe FmadataParseName::V2::Client do
         expect(response.people).to be_a(Array)
         expect(response.people.count).to eq(1)
         expect(response.people.first).to have_attributes(
-          :salutations => 'Mr',
+          :salutations => ['Mr'],
           :given_name => 'Tyler',
           :secondary_name => 'Kenneth',
           :surname => 'Vannurden',
-          :job_titles => 'President'
+          :job_titles => ['President']
         )
       end
 

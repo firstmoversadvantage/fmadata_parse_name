@@ -20,8 +20,9 @@ Gem::Specification.new do |s|
   s.license       = 'MIT'
 
   s.add_runtime_dependency "rest-client", "~> 1.6.0"
+  s.add_runtime_dependency "json", "1.8.6"
   s.add_development_dependency "rspec", "~> 3.4"
-  s.add_development_dependency "vcr", "3.0.0"
+  s.add_development_dependency "vcr", "2.9.2"
   # s.add_development_dependency "typhoeus"
   # s.add_development_dependency "public_suffix", "1.4.6"
   # s.add_development_dependency "addressable", "~> 2.3.8"

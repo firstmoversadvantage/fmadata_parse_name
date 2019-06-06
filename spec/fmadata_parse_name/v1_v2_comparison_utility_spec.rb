@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe FmadataParseName::V1V2ComparisonUtility do
   let(:v1_client) do
-    FmadataParseName::V1::Client.new('c104048a-1f32-467c-9022-4b90d8893f85')
+    FmadataParseName::V1::Client.new('7d112490-ff1e-4759-9af1-a3b30a2cc87a')
   end
 
   let(:v2_client) do
@@ -97,7 +97,7 @@ describe FmadataParseName::V1V2ComparisonUtility do
           comparison = described_class.new(name, v1_result, v2_result)
 
           expect(comparison.compare).to be false
-          expect(comparison.diff_message).to eq('metadata: job_titles failed. v1: null v2: ["Agent"]')
+          expect(comparison.diff_message).to eq('metadata: job_titles failed. v1: null v2: Agent')
         end
       end
     end

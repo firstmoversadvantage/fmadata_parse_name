@@ -69,17 +69,17 @@ module FmadataParseName
     end
 
     def name_metadata
-      %i(
-        alternate_name
-        salutations
-        given_name
-        secondary_name
-        surname
-        credentials
-        job_titles
-        prefixes
-        suffixes
-      )
+      [
+        :alternate_name,
+        :salutations,
+        :given_name,
+        :secondary_name,
+        :surname,
+        :credentials,
+        :job_titles,
+        :prefixes,
+        :suffixes
+      ]
     end
   end
 end
