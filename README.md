@@ -114,8 +114,14 @@ v1_v2_comparison.diff_message # => 'v1 people count: 1 v2 people count: 2'
 
 The intent of the `diff_message` is to integrate it into your application's logging so that differences can be reviewed and coded for.
 
-## Making changes to the gem
+## Making changes to the gem:
 
 ```
 gem build fmadata_parse_name.gemspec
+```
+
+## Installing the local version of the gem (for development purposes only)
+
+```
+gem build ./fmadata_parse_name.gemspec
 ```
