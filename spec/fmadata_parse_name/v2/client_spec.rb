@@ -10,12 +10,10 @@ describe FmadataParseName::V2::Client do
       }.to raise_error('No authentication token given')
     end
 
-    it 'raises an exception if an invalid token was given' do
-      VCR.use_cassette('v2 invalid token') do
-        expect {
-          described_class.new('abc').parse('first movers advantage')
-        }.to raise_error(RestClient::Unauthorized, '401 Unauthorized')
-      end
+    it 'raises an exception if an invalid token was given', :vcr do
+      expect {
+        described_class.new('abc').parse('first movers advantage')
+      }.to raise_error(RestClient::Unauthorized, '401 Unauthorized')
     end
 
     it 'returns a Response object if the parse failed', :vcr do

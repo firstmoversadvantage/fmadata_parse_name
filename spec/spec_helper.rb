@@ -20,17 +20,10 @@ require 'fmadata_parse_name'
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-# VCR.configuration do |c|
-#   c.cassette_library_dir = 'spec/vcr'
-#   # your HTTP request service. You can also use fakeweb, webmock, and more
-#   c.hook_into :fakeweb
-#   # https://relishapp.com/vcr/vcr/v/3-0-1/docs/configuration/hook-into
-#   c.configure_rspec_metadata!
-# end
-
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/vcr'
   c.hook_into :fakeweb
+  c.configure_rspec_metadata!
 end
 
 RSpec.configure do |config|

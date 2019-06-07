@@ -1,0 +1,48 @@
+--- 
+http_interactions: 
+- request: 
+    method: get
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=first+movers+advantage
+    body: 
+      string: ""
+    headers: 
+      timeout: 
+      - "5"
+      accept-encoding: 
+      - gzip, deflate
+      authorization: 
+      - 66039622-9040-4964-bfe2-8ce4d1176724
+      accept: 
+      - application/json
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      etag: 
+      - W/"e9c965ecb910bd8ea4c2a6b9face669f"
+      x-runtime: 
+      - "0.087103"
+      date: 
+      - Fri, 07 Jun 2019 18:54:39 GMT
+      transfer-encoding: 
+      - chunked
+      x-powered-by: 
+      - Phusion Passenger 5.0.30
+      content-type: 
+      - application/json; charset=utf-8
+      x-request-id: 
+      - 268fe4be-949c-4fbf-b58f-17825c2b0116
+      status: 
+      - 200 OK
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      server: 
+      - Apache/2.4.29 (Ubuntu)
+      strict-transport-security: 
+      - max-age=31536000; includeSubDomains
+    body: 
+      string: "{\"base\":{\"input\":\"first movers advantage\",\"locale\":\"en-US\"},\"organization\":[{\"name\":\"First Movers Advantage\"}]}"
+    http_version: "1.1"
+  recorded_at: Fri, 07 Jun 2019 18:54:39 GMT
+recorded_with: VCR 2.9.2

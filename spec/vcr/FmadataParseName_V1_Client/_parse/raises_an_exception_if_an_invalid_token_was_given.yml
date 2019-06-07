@@ -1,0 +1,48 @@
+--- 
+http_interactions: 
+- request: 
+    method: get
+    uri: http://parse.name/names/parse.json?token=abc&q=first+movers+advantage
+    body: 
+      string: ""
+    headers: 
+      timeout: 
+      - "5"
+      accept-encoding: 
+      - gzip, deflate
+      accept: 
+      - "*/*; q=0.5, application/xml"
+  response: 
+    status: 
+      code: 401
+      message: Unauthorized
+    headers: 
+      x-content-type-options: 
+      - nosniff
+      x-runtime: 
+      - "0.005177"
+      date: 
+      - Fri, 07 Jun 2019 18:54:31 GMT
+      transfer-encoding: 
+      - chunked
+      x-powered-by: 
+      - Phusion Passenger 5.3.4
+      content-type: 
+      - application/json; charset=utf-8
+      x-request-id: 
+      - 33d2e6e3-d132-4c7f-a2b3-1d6ffcf90f21
+      status: 
+      - 401 Unauthorized
+      cache-control: 
+      - no-cache
+      server: 
+      - Apache/2.4.18 (Ubuntu)
+      x-frame-options: 
+      - SAMEORIGIN
+      x-xss-protection: 
+      - 1; mode=block
+    body: 
+      string: "null"
+    http_version: "1.1"
+  recorded_at: Fri, 07 Jun 2019 18:54:31 GMT
+recorded_with: VCR 2.9.2
