@@ -87,9 +87,9 @@ v1_response = @v1_client.parse(input)
 v2_response = @v2_client.parse(input)
 
 v1_v2_comparison = FmadataParseName::V1V2ComparisonUtility.new(
-  input: input,
-  v1_result: v1_response,
-  v2_result: v2_response
+  input,
+  v1_response,
+  v2_response
 )
 
 v1_v2_comparison.compare => true # returns `true` when they both returned the same result
@@ -103,9 +103,9 @@ v1_response = @v1_client.parse(input2)
 v2_response = @v2_client.parse(input2)
 
 v1_v2_comparison = FmadataParseName::V1V2ComparisonUtility.new(
-  input: input2,
-  v1_result: v1_response,
-  v2_result: v2_response
+  input2,
+  v1_response,
+  v2_response
 )
 
 v1_v2_comparison.compare # => false
