@@ -1,4 +1,5 @@
-# require 'vcr'
+require 'vcr'
+require 'fakeweb'
 # require 'webmock'
 # require 'pry'
 require 'fmadata_parse_name'
@@ -26,6 +27,11 @@ require 'fmadata_parse_name'
 #   # https://relishapp.com/vcr/vcr/v/3-0-1/docs/configuration/hook-into
 #   c.configure_rspec_metadata!
 # end
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/vcr'
+  c.hook_into :fakeweb
+end
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
