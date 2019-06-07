@@ -24,9 +24,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec", "~> 3.4"
   s.add_development_dependency "vcr", "2.9.2"
   s.add_development_dependency "fakeweb"
-  # s.add_development_dependency "typhoeus", "1.3.1"
-  # s.add_development_dependency "public_suffix", "1.4.6"
-  # s.add_development_dependency "addressable", "~> 2.3.8"
-  # s.add_development_dependency "hashdiff", "0.3.6"
-  # s.add_development_dependency "webmock", "~> 1.24.0"
 end
