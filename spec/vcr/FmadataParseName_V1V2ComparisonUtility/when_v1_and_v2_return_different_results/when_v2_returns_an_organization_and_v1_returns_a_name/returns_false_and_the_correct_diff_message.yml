@@ -1,97 +1,113 @@
---- 
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: get
-    uri: http://parse.name/names/parse.json?token=7d112490-ff1e-4759-9af1-a3b30a2cc87a&q=Tyler+Roman+Catholic
-    body: 
-      string: ""
-    headers: 
-      timeout: 
-      - "5"
-      accept-encoding: 
+    uri: http://parse.name/names/parse.json?q=Tyler%20Roman%20Catholic&token=c104048a-1f32-467c-9022-4b90d8893f85
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
       - gzip, deflate
-      accept: 
-      - "*/*; q=0.5, application/xml"
-  response: 
-    status: 
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Timeout:
+      - '5'
+      Host:
+      - parse.name
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      x-content-type-options: 
-      - nosniff
-      etag: 
-      - W/"71b0a9ea567216d956d8200a7ff58132"
-      x-runtime: 
-      - "0.014831"
-      date: 
-      - Fri, 07 Jun 2019 18:54:34 GMT
-      transfer-encoding: 
-      - chunked
-      x-powered-by: 
-      - Phusion Passenger 5.3.4
-      content-type: 
-      - application/json; charset=utf-8
-      x-request-id: 
-      - f1c65482-c262-4d2e-a347-ab35df9bff38
-      status: 
-      - 200 OK
-      set-cookie: 
-      - _parse_name_session=c0FvUVpDUklsNmZBRFllbXRUcDUwbnU5cUpKU2hMcTc0RGVkbWdhSmpVeUduM3grY0dmcTl6eVhyaXdoczRUTGtWS2tNb3lmWS9haHJkeStRTm1TbnNERjUrQXhLTTZvMllNbk1wMkRtV3RNNmV6WlJ2a3BYWm0rRkhzWC9iYmgtLXA1NDV2V24zTlpnY2FYZ1lkRmRzNXc9PQ%3D%3D--a24ab30e4f26f1445294176412982a11823bda23; path=/; HttpOnly
-      cache-control: 
-      - max-age=0, private, must-revalidate
-      server: 
+    headers:
+      Date:
+      - Tue, 28 May 2019 22:48:21 GMT
+      Server:
       - Apache/2.4.18 (Ubuntu)
-      x-frame-options: 
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Frame-Options:
       - SAMEORIGIN
-      x-xss-protection: 
+      X-Xss-Protection:
       - 1; mode=block
-    body: 
-      string: "{\"name_like_score\":2,\"id\":9198815,\"uuid\":\"6389069b-09e4-480d-94a9-5821e202e213\",\"language\":\"en\",\"input\":\"tyler roman catholic\",\"parse_status\":200,\"parse_method\":\"R\",\"parser_version\":24,\"contains_aka_or_fka\":false,\"people_cache\":[{\"id\":8158037,\"uuid\":\"5d31f0e7-4c48-42bf-a5d7-096286bf9131\",\"language\":\"en\",\"salutation\":\"\",\"prefix\":\"\",\"given_name\":\"Tyler\",\"secondary_name\":\"\",\"surname\":\"Roman Catholic\",\"suffix\":\"\",\"alternate_name\":\"\",\"credentials\":\"\",\"gender\":null,\"created_by_user_id\":null,\"updated_by_user_id\":null,\"created_at\":\"2019-05-28T22:47:11.805Z\",\"updated_at\":\"2019-05-28T22:47:11.805Z\"}],\"organizations_cache\":[],\"job_titles_cache\":null,\"credentials_cache\":null,\"email_addresses_cache\":null,\"telephones_cache\":null,\"created_by_user_id\":null,\"updated_by_user_id\":null,\"created_at\":\"2019-05-28T22:47:12.000Z\",\"updated_at\":\"2019-05-28T22:47:12.000Z\"}"
-    http_version: "1.1"
-  recorded_at: Fri, 07 Jun 2019 18:54:34 GMT
-- request: 
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.009032'
+      X-Request-Id:
+      - 2fa1480b-998d-4f8a-b43d-7c2f24ca68a5
+      X-Powered-By:
+      - Phusion Passenger 5.3.4
+      Set-Cookie:
+      - _parse_name_session=bEl3dHFUeFkvR3diRG8vM3lHVnUveXduMVluclVCbTNJWmhDb05laUNpYll1V3lrdHNyRWkvYXJEVzE2cWdtbDBCNzkzMzBNNkJ0NDhyRkJZY25rYWZtbjVXMWVudnRQR05qY1VJNE1mYVNiS0J4VGJ2eGt6bTNmZ2U1ZjV5TWEtLU0zRmM2cFpybDIwbEszYVpGV2NyWEE9PQ%3D%3D--141f88a99a2ba71bd24ad5767acbaf45b310b797;
+        path=/; HttpOnly
+      Etag:
+      - W/"71b0a9ea567216d956d8200a7ff58132"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"name_like_score":2,"id":9198815,"uuid":"6389069b-09e4-480d-94a9-5821e202e213","language":"en","input":"tyler
+        roman catholic","parse_status":200,"parse_method":"R","parser_version":24,"contains_aka_or_fka":false,"people_cache":[{"id":8158037,"uuid":"5d31f0e7-4c48-42bf-a5d7-096286bf9131","language":"en","salutation":"","prefix":"","given_name":"Tyler","secondary_name":"","surname":"Roman
+        Catholic","suffix":"","alternate_name":"","credentials":"","gender":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":"2019-05-28T22:47:11.805Z","updated_at":"2019-05-28T22:47:11.805Z"}],"organizations_cache":[],"job_titles_cache":null,"credentials_cache":null,"email_addresses_cache":null,"telephones_cache":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":"2019-05-28T22:47:12.000Z","updated_at":"2019-05-28T22:47:12.000Z"}'
+    http_version: 
+  recorded_at: Tue, 28 May 2019 22:48:21 GMT
+- request:
     method: get
-    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=Tyler+Roman+Catholic
-    body: 
-      string: ""
-    headers: 
-      timeout: 
-      - "5"
-      accept-encoding: 
-      - gzip, deflate
-      authorization: 
-      - 66039622-9040-4964-bfe2-8ce4d1176724
-      accept: 
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=Tyler%20Roman%20Catholic
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
       - application/json
-  response: 
-    status: 
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Authorization:
+      - 66039622-9040-4964-bfe2-8ce4d1176724
+      Timeout:
+      - '5'
+      Host:
+      - v2.parse.name
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      etag: 
-      - W/"9a0aab78a773eb3aa2d4453c1344dd60"
-      x-runtime: 
-      - "0.084689"
-      date: 
-      - Fri, 07 Jun 2019 18:54:34 GMT
-      transfer-encoding: 
-      - chunked
-      x-powered-by: 
-      - Phusion Passenger 5.0.30
-      content-type: 
-      - application/json; charset=utf-8
-      x-request-id: 
-      - 667baaaf-1898-4c02-8367-959f8dedb5e6
-      status: 
-      - 200 OK
-      cache-control: 
-      - max-age=0, private, must-revalidate
-      server: 
+    headers:
+      Date:
+      - Tue, 28 May 2019 22:48:21 GMT
+      Server:
       - Apache/2.4.29 (Ubuntu)
-      strict-transport-security: 
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
-    body: 
-      string: "{\"base\":{\"input\":\"Tyler Roman Catholic\",\"locale\":\"en-US\"},\"organization\":[{\"name\":\"Tyler Roman Catholic\"}]}"
-    http_version: "1.1"
-  recorded_at: Fri, 07 Jun 2019 18:54:34 GMT
-recorded_with: VCR 2.9.2
+      X-Request-Id:
+      - 43361df5-2ad9-4628-814e-720e7f862d5c
+      X-Runtime:
+      - '0.084035'
+      X-Powered-By:
+      - Phusion Passenger 5.0.30
+      Etag:
+      - W/"9a0aab78a773eb3aa2d4453c1344dd60"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"base":{"input":"Tyler Roman Catholic","locale":"en-US"},"organization":[{"name":"Tyler
+        Roman Catholic"}]}'
+    http_version: 
+  recorded_at: Tue, 28 May 2019 22:48:21 GMT
+recorded_with: VCR 4.0.0

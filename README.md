@@ -87,9 +87,9 @@ v1_response = @v1_client.parse(input)
 v2_response = @v2_client.parse(input)
 
 v1_v2_comparison = FmadataParseName::V1V2ComparisonUtility.new(
-  input,
-  v1_response,
-  v2_response
+  input: input,
+  v1_result: v1_response,
+  v2_result: v2_response
 )
 
 v1_v2_comparison.compare => true # returns `true` when they both returned the same result
@@ -103,9 +103,9 @@ v1_response = @v1_client.parse(input2)
 v2_response = @v2_client.parse(input2)
 
 v1_v2_comparison = FmadataParseName::V1V2ComparisonUtility.new(
-  input2,
-  v1_response,
-  v2_response
+  input: input2,
+  v1_result: v1_response,
+  v2_result: v2_response
 )
 
 v1_v2_comparison.compare # => false
@@ -114,14 +114,8 @@ v1_v2_comparison.diff_message # => 'v1 people count: 1 v2 people count: 2'
 
 The intent of the `diff_message` is to integrate it into your application's logging so that differences can be reviewed and coded for.
 
-## Making changes to the gem:
+## Making changes to the gem
 
 ```
 gem build fmadata_parse_name.gemspec
-```
-
-## Installing the local version of the gem (for development purposes only)
-
-```
-gem build ./fmadata_parse_name.gemspec
 ```

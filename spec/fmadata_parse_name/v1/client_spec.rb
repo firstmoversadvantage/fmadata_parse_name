@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe FmadataParseName::V1::Client do
-  subject { described_class.new('7d112490-ff1e-4759-9af1-a3b30a2cc87a') }
+  subject { described_class.new('c104048a-1f32-467c-9022-4b90d8893f85') }
 
   describe '#parse' do
     it 'raises an exception if token was never given' do
@@ -22,10 +22,10 @@ describe FmadataParseName::V1::Client do
         expect(response.people).to be_a(Array)
         expect(response.people.count).to eq(1)
         expect(response.people.first).to have_attributes(
-          :salutations => 'Mr',
-          :given_name => 'Tyler',
-          :secondary_name => 'Kenneth',
-          :surname => 'Vannurden'
+          salutations: 'Mr',
+          given_name: 'Tyler',
+          secondary_name: 'Kenneth',
+          surname: 'Vannurden'
         )
       end
 
@@ -38,12 +38,12 @@ describe FmadataParseName::V1::Client do
       it 'assigns nil values for attributes that are empty', :vcr do
         response = subject.parse('tyler vannurden')
         expect(response.people.first).to have_attributes(
-          :secondary_name => nil,
-          :salutations => nil,
-          :credentials => nil,
-          :prefixes => nil,
-          :suffixes => nil,
-          :alternate_name => nil
+          secondary_name: nil,
+          salutations: nil,
+          credentials: nil,
+          prefixes: nil,
+          suffixes: nil,
+          alternate_name: nil
         )
       end
     end
@@ -54,7 +54,7 @@ describe FmadataParseName::V1::Client do
         expect(response.organizations.count).to eq(1)
 
         expect(response.organizations[0]).to have_attributes(
-          :name => 'First Movers Advantage, LLC'
+          name: 'First Movers Advantage, LLC',
         )
       end
 

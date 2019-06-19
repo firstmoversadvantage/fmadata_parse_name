@@ -54,11 +54,11 @@ describe FmadataParseName::V2::Client do
         expect(response.people).to be_a(Array)
         expect(response.people.count).to eq(1)
         expect(response.people.first).to have_attributes(
-          :salutations => ['Mr'],
-          :given_name => 'Tyler',
-          :secondary_name => 'Kenneth',
-          :surname => 'Vannurden',
-          :job_titles => ['President']
+          salutations: 'Mr',
+          given_name: 'Tyler',
+          secondary_name: 'Kenneth',
+          surname: 'Vannurden',
+          job_titles: 'President'
         )
       end
 
@@ -75,13 +75,13 @@ describe FmadataParseName::V2::Client do
         expect(response.people.count).to eq(2)
 
         expect(response.people[0]).to have_attributes(
-          :given_name => 'Tyler',
-          :surname => 'Vannurden'
+          given_name: 'Tyler',
+          surname: 'Vannurden',
         )
 
         expect(response.people[1]).to have_attributes(
-          :given_name => 'Nolan',
-          :surname => 'Vannurden'
+          given_name: 'Nolan',
+          surname: 'Vannurden',
         )
       end
     end
@@ -92,7 +92,7 @@ describe FmadataParseName::V2::Client do
         expect(response.organizations.count).to eq(1)
 
         expect(response.organizations.first).to have_attributes(
-          :name => 'First Movers Advantage'
+          name: 'First Movers Advantage',
         )
       end
 
@@ -110,12 +110,12 @@ describe FmadataParseName::V2::Client do
         expect(response.organizations.count).to eq(1)
 
         expect(response.people.first).to have_attributes(
-          :given_name => 'Tyler',
-          :surname => 'Vannurden'
+          given_name: 'Tyler',
+          surname: 'Vannurden',
         )
 
         expect(response.organizations[0]).to have_attributes(
-          :name => 'First Movers Advantage'
+          name: 'First Movers Advantage',
         )
       end
     end

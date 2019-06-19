@@ -1,48 +1,55 @@
---- 
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: get
     uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=tyler
-    body: 
-      string: ""
-    headers: 
-      timeout: 
-      - "5"
-      accept-encoding: 
-      - gzip, deflate
-      authorization: 
-      - 66039622-9040-4964-bfe2-8ce4d1176724
-      accept: 
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
       - application/json
-  response: 
-    status: 
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Authorization:
+      - 66039622-9040-4964-bfe2-8ce4d1176724
+      Timeout:
+      - '5'
+      Host:
+      - v2.parse.name
+  response:
+    status:
       code: 400
       message: Bad Request
-    headers: 
-      x-runtime: 
-      - "0.065885"
-      date: 
-      - Fri, 07 Jun 2019 18:54:37 GMT
-      transfer-encoding: 
-      - chunked
-      x-powered-by: 
-      - Phusion Passenger 5.0.30
-      content-type: 
-      - application/json; charset=utf-8
-      x-request-id: 
-      - 77e6a2f0-9ca7-4325-888a-1a5ac2e2b02e
-      status: 
-      - 400 Bad Request
-      cache-control: 
-      - no-cache
-      server: 
+    headers:
+      Date:
+      - Wed, 29 May 2019 02:31:03 GMT
+      Server:
       - Apache/2.4.29 (Ubuntu)
-      strict-transport-security: 
+      Cache-Control:
+      - no-cache
+      Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
-      connection: 
+      X-Request-Id:
+      - 948388a0-6856-49b8-97b5-a6c9ad9c9b05
+      X-Runtime:
+      - '0.187995'
+      X-Powered-By:
+      - Phusion Passenger 5.0.30
+      Status:
+      - 400 Bad Request
+      Connection:
       - close
-    body: 
-      string: "{\"base\":{\"input\":\"tyler\",\"locale\":\"en-US\",\"errors\":{\"input\":[\"could not be distinguished between a name or organization\"]}}}"
-    http_version: "1.1"
-  recorded_at: Fri, 07 Jun 2019 18:54:37 GMT
-recorded_with: VCR 2.9.2
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"base":{"input":"tyler","locale":"en-US","errors":{"input":["could
+        not be distinguished between a name or organization"]}}}'
+    http_version: 
+  recorded_at: Wed, 29 May 2019 02:31:03 GMT
+recorded_with: VCR 4.0.0
