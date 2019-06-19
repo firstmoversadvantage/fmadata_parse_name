@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=first%20movers%20advantage
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=tyler
     body:
       encoding: US-ASCII
       string: ''
@@ -21,33 +21,35 @@ http_interactions:
       - v2.parse.name
   response:
     status:
-      code: 200
-      message: OK
+      code: 400
+      message: Bad Request
     headers:
       Date:
-      - Sun, 26 May 2019 17:45:25 GMT
+      - Wed, 29 May 2019 02:24:20 GMT
       Server:
       - Apache/2.4.29 (Ubuntu)
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
       X-Request-Id:
-      - 71f2ecb8-e65d-4e29-8f4b-555aa0664945
+      - 2cbf4878-66a3-4c24-9e05-ebbca6a34e99
       X-Runtime:
-      - '0.086776'
+      - '0.184898'
       X-Powered-By:
       - Phusion Passenger 5.0.30
-      Etag:
-      - W/"e9c965ecb910bd8ea4c2a6b9face669f"
       Status:
-      - 200 OK
+      - 400 Bad Request
+      Connection:
+      - close
       Transfer-Encoding:
       - chunked
       Content-Type:
       - application/json; charset=utf-8
     body:
       encoding: UTF-8
-      string: '{"base":{"input":"first movers advantage","locale":"en-US"},"organization":[{"name":"First
-        Movers Advantage"}]}'
+      string: '{"base":{"input":"tyler","locale":"en-US","errors":{"input":["could
+        not be distinguished between a name or organization"]}}}'
     http_version: 
-  recorded_at: Sun, 26 May 2019 17:45:25 GMT
+  recorded_at: Wed, 29 May 2019 02:24:20 GMT
 recorded_with: VCR 4.0.0

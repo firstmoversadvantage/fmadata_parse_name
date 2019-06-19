@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in fmadata_parse_name.gemspec
+# Specify your gem's dependencies in pushwoosh.gemspec
 gemspec

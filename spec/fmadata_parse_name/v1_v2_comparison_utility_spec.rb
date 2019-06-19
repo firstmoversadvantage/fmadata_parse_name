@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe FmadataParseName::V1V2ComparisonUtility do
   let(:v1_client) do
-    FmadataParseName::V1::Client.new('7d112490-ff1e-4759-9af1-a3b30a2cc87a')
+    FmadataParseName::V1::Client.new('c104048a-1f32-467c-9022-4b90d8893f85')
   end
 
   let(:v2_client) do
@@ -16,7 +16,7 @@ describe FmadataParseName::V1V2ComparisonUtility do
         v1_result = v1_client.parse(name)
         v2_result = v2_client.parse(name)
 
-        comparison = described_class.new(name, v1_result, v2_result)
+        comparison = described_class.new(input: name, v1_result: v1_result, v2_result: v2_result)
 
         expect(comparison.compare).to be true
       end
@@ -28,7 +28,7 @@ describe FmadataParseName::V1V2ComparisonUtility do
         v1_result = v1_client.parse(org_name)
         v2_result = v2_client.parse(org_name)
 
-        comparison = described_class.new(org_name, v1_result, v2_result)
+        comparison = described_class.new(input: org_name, v1_result: v1_result, v2_result: v2_result)
 
         expect(comparison.compare).to be true
       end
@@ -40,7 +40,7 @@ describe FmadataParseName::V1V2ComparisonUtility do
         v1_result = v1_client.parse(name)
         v2_result = v2_client.parse(name)
 
-        comparison = described_class.new(name, v1_result, v2_result)
+        comparison = described_class.new(input: name, v1_result: v1_result, v2_result: v2_result)
 
         expect(comparison.compare).to be true
       end
@@ -50,7 +50,7 @@ describe FmadataParseName::V1V2ComparisonUtility do
         v1_result = v1_client.parse(name)
         v2_result = v2_client.parse(name)
 
-        comparison = described_class.new(name, v1_result, v2_result)
+        comparison = described_class.new(input: name, v1_result: v1_result, v2_result: v2_result)
 
         expect(comparison.compare).to be true
       end
@@ -65,7 +65,7 @@ describe FmadataParseName::V1V2ComparisonUtility do
         v1_result = v1_client.parse(org_name)
         v2_result = v2_client.parse(org_name)
 
-        comparison = described_class.new(org_name, v1_result, v2_result)
+        comparison = described_class.new(input: org_name, v1_result: v1_result, v2_result: v2_result)
 
         expect(comparison.compare).to be false
         expect(comparison.diff_message).to eq('v1 success?: false v2 success?: true')
@@ -79,7 +79,7 @@ describe FmadataParseName::V1V2ComparisonUtility do
         v1_result = v1_client.parse(org_name)
         v2_result = v2_client.parse(org_name)
 
-        comparison = described_class.new(org_name, v1_result, v2_result)
+        comparison = described_class.new(input: org_name, v1_result: v1_result, v2_result: v2_result)
 
         expect(comparison.compare).to be false
         expect(comparison.diff_message).to eq('v1 people count: 1 v2 people count: 0')
@@ -94,10 +94,10 @@ describe FmadataParseName::V1V2ComparisonUtility do
           v1_result = v1_client.parse(name)
           v2_result = v2_client.parse(name)
 
-          comparison = described_class.new(name, v1_result, v2_result)
+          comparison = described_class.new(input: name, v1_result: v1_result, v2_result: v2_result)
 
           expect(comparison.compare).to be false
-          expect(comparison.diff_message).to eq('metadata: job_titles failed. v1: null v2: Agent')
+          expect(comparison.diff_message).to eq('metadata: job_titles failed. v1: null v2: ["Agent"]')
         end
       end
     end
@@ -109,7 +109,7 @@ describe FmadataParseName::V1V2ComparisonUtility do
         v1_result = v1_client.parse(name)
         v2_result = v2_client.parse(name)
 
-        comparison = described_class.new(name, v1_result, v2_result)
+        comparison = described_class.new(input: name, v1_result: v1_result, v2_result: v2_result)
 
         expect(comparison.compare).to be false
         expect(comparison.diff_message).to eq('v1 people count: 1 v2 people count: 2')
@@ -123,7 +123,7 @@ describe FmadataParseName::V1V2ComparisonUtility do
         v1_result = v1_client.parse(name)
         v2_result = v2_client.parse(name)
 
-        comparison = described_class.new(name, v1_result, v2_result)
+        comparison = described_class.new(input: name, v1_result: v1_result, v2_result: v2_result)
 
         expect(comparison.compare).to be false
         expect(comparison.diff_message).to eq('v1 people count: 0 v2 people count: 1')
