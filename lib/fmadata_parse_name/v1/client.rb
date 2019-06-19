@@ -12,8 +12,8 @@ module FmadataParseName
 
         response = RestClient.get(
           'http://parse.name/names/parse.json',
-          params: { q: input, token: @token },
-          timeout: 5
+          :params => { :q => input, :token => @token },
+          :timeout => 5
         )
 
         json_response = JSON(response)

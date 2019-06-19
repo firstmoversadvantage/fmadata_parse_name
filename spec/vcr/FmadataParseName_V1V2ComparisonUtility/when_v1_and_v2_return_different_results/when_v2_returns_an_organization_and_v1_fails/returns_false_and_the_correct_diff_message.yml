@@ -1,111 +1,97 @@
----
-http_interactions:
-- request:
+--- 
+http_interactions: 
+- request: 
     method: get
-    uri: http://parse.name/names/parse.json?q=First%20Movers%20Advantage&token=c104048a-1f32-467c-9022-4b90d8893f85
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*"
-      Accept-Encoding:
+    uri: http://parse.name/names/parse.json?token=7d112490-ff1e-4759-9af1-a3b30a2cc87a&q=First+Movers+Advantage
+    body: 
+      string: ""
+    headers: 
+      timeout: 
+      - "5"
+      accept-encoding: 
       - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
-      Timeout:
-      - '5'
-      Host:
-      - parse.name
-  response:
-    status:
+      accept: 
+      - "*/*; q=0.5, application/xml"
+  response: 
+    status: 
       code: 200
       message: OK
-    headers:
-      Date:
-      - Tue, 28 May 2019 22:48:17 GMT
-      Server:
-      - Apache/2.4.18 (Ubuntu)
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
+    headers: 
+      x-content-type-options: 
       - nosniff
-      X-Runtime:
-      - '0.021894'
-      X-Request-Id:
-      - 6929914a-4f9c-48a8-ac7f-9768e088b2ef
-      X-Powered-By:
-      - Phusion Passenger 5.3.4
-      Set-Cookie:
-      - _parse_name_session=STNWZEhFenU2NmVQMnZQcXBhQWZKNThMZytxTHU3QTNwaGpYM3ZjNzNnOWcvazVWOGtVZXZYa3hOZzNQQ2JLWWNrbi9Ob2lBQXU5YUNwUXRSblFJN2RuRVZqeGZmTFRxNHdINU1vRzczZFFnNkExS1pUbDdwMzZaVHoxZWJudGFDbFVPeHYweTNlNE1XMkZabVpuQlltNkxFVDNlSlZpZ2theGxBY1JnR0FGYjBZU3U4UU5EdFBwbTNqODJHUUU0KytWRGxWd0ZCaCtoZE5JUWpoSmdSdz09LS04WGJHRTM3ZjdrNElWc0FEdS92OXdnPT0%3D--9f910bccf9270ffb85018f41289db9149c5b83c3;
-        path=/; HttpOnly
-      Etag:
+      etag: 
       - W/"b4d45066e2f4025f28e6c5327d434464"
-      Status:
-      - 200 OK
-      Transfer-Encoding:
+      x-runtime: 
+      - "0.022093"
+      date: 
+      - Fri, 07 Jun 2019 18:54:34 GMT
+      transfer-encoding: 
       - chunked
-      Content-Type:
+      x-powered-by: 
+      - Phusion Passenger 5.3.4
+      content-type: 
       - application/json; charset=utf-8
-    body:
-      encoding: UTF-8
-      string: '{"id":null,"uuid":null,"language":"en","input":"first movers advantage","parse_status":602,"parse_method":"R","parser_version":24,"contains_aka_or_fka":false,"people_cache":null,"organizations_cache":null,"job_titles_cache":null,"credentials_cache":null,"email_addresses_cache":null,"telephones_cache":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":null,"updated_at":null,"name_like_score":0}'
-    http_version: 
-  recorded_at: Tue, 28 May 2019 22:48:17 GMT
-- request:
+      x-request-id: 
+      - 0f736edc-6664-4526-b3ef-e984e88f9787
+      status: 
+      - 200 OK
+      set-cookie: 
+      - _parse_name_session=M2c2R2txRlE1a3NlaTExaitja0VZbERnZEFpY29ubzlYRms3cGllV01KLzlKRlpZL1VOU05xRVM5dUNFYU1DR0YvUlV5RGdyRHpvaG8zOS9rLzljZEFwdVVtM3lDMnBIczZDdDJVQ2k5MGZENnNaaDJNdEdYb3dLQ1Z0KzlRczVPemtOMGJVenVZaTV0TVM5RUtVMVFFQllFU1UvUjQrSE5HSC8rdzMxMlJZT0hEQVVtNUwzU0xyc0NSVXIyMGk1cm11Ui91bWU4V3JrU1ZUZU1INStlUT09LS1xRVF3SHh5cUZqc0JRL0FIQVdoME9RPT0%3D--1688d1a5dec6c5646d719605d4b4e943a28a228d; path=/; HttpOnly
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      server: 
+      - Apache/2.4.18 (Ubuntu)
+      x-frame-options: 
+      - SAMEORIGIN
+      x-xss-protection: 
+      - 1; mode=block
+    body: 
+      string: "{\"id\":null,\"uuid\":null,\"language\":\"en\",\"input\":\"first movers advantage\",\"parse_status\":602,\"parse_method\":\"R\",\"parser_version\":24,\"contains_aka_or_fka\":false,\"people_cache\":null,\"organizations_cache\":null,\"job_titles_cache\":null,\"credentials_cache\":null,\"email_addresses_cache\":null,\"telephones_cache\":null,\"created_by_user_id\":null,\"updated_by_user_id\":null,\"created_at\":null,\"updated_at\":null,\"name_like_score\":0}"
+    http_version: "1.1"
+  recorded_at: Fri, 07 Jun 2019 18:54:34 GMT
+- request: 
     method: get
-    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=First%20Movers%20Advantage
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=First+Movers+Advantage
+    body: 
+      string: ""
+    headers: 
+      timeout: 
+      - "5"
+      accept-encoding: 
       - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
-      Authorization:
+      authorization: 
       - 66039622-9040-4964-bfe2-8ce4d1176724
-      Timeout:
-      - '5'
-      Host:
-      - v2.parse.name
-  response:
-    status:
+      accept: 
+      - application/json
+  response: 
+    status: 
       code: 200
       message: OK
-    headers:
-      Date:
-      - Tue, 28 May 2019 22:48:17 GMT
-      Server:
-      - Apache/2.4.29 (Ubuntu)
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      X-Request-Id:
-      - ef4b6c72-7f67-4b93-bc81-36a913d2bd4d
-      X-Runtime:
-      - '0.092995'
-      X-Powered-By:
-      - Phusion Passenger 5.0.30
-      Etag:
+    headers: 
+      etag: 
       - W/"85f729433daf42e17afa117cb0d45c90"
-      Status:
-      - 200 OK
-      Transfer-Encoding:
+      x-runtime: 
+      - "0.085656"
+      date: 
+      - Fri, 07 Jun 2019 18:54:34 GMT
+      transfer-encoding: 
       - chunked
-      Content-Type:
+      x-powered-by: 
+      - Phusion Passenger 5.0.30
+      content-type: 
       - application/json; charset=utf-8
-    body:
-      encoding: UTF-8
-      string: '{"base":{"input":"First Movers Advantage","locale":"en-US"},"organization":[{"name":"First
-        Movers Advantage"}]}'
-    http_version: 
-  recorded_at: Tue, 28 May 2019 22:48:18 GMT
-recorded_with: VCR 4.0.0
+      x-request-id: 
+      - a5c3990d-021c-4b92-a0c4-6aa0d55a43c9
+      status: 
+      - 200 OK
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      server: 
+      - Apache/2.4.29 (Ubuntu)
+      strict-transport-security: 
+      - max-age=31536000; includeSubDomains
+    body: 
+      string: "{\"base\":{\"input\":\"First Movers Advantage\",\"locale\":\"en-US\"},\"organization\":[{\"name\":\"First Movers Advantage\"}]}"
+    http_version: "1.1"
+  recorded_at: Fri, 07 Jun 2019 18:54:34 GMT
+recorded_with: VCR 2.9.2

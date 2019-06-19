@@ -1,113 +1,97 @@
----
-http_interactions:
-- request:
+--- 
+http_interactions: 
+- request: 
     method: get
-    uri: http://parse.name/names/parse.json?q=Tyler%20Vannurden,%20Agent&token=c104048a-1f32-467c-9022-4b90d8893f85
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*"
-      Accept-Encoding:
+    uri: http://parse.name/names/parse.json?token=7d112490-ff1e-4759-9af1-a3b30a2cc87a&q=Tyler+Vannurden%2C+Agent
+    body: 
+      string: ""
+    headers: 
+      timeout: 
+      - "5"
+      accept-encoding: 
       - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
-      Timeout:
-      - '5'
-      Host:
-      - parse.name
-  response:
-    status:
+      accept: 
+      - "*/*; q=0.5, application/xml"
+  response: 
+    status: 
       code: 200
       message: OK
-    headers:
-      Date:
-      - Tue, 28 May 2019 23:02:39 GMT
-      Server:
-      - Apache/2.4.18 (Ubuntu)
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
+    headers: 
+      x-content-type-options: 
       - nosniff
-      X-Runtime:
-      - '0.008405'
-      X-Request-Id:
-      - 314ceb1a-7d55-4806-bd90-448ff87d34fc
-      X-Powered-By:
-      - Phusion Passenger 5.3.4
-      Set-Cookie:
-      - _parse_name_session=NFZEQnNCNE9mRGE3bTBlc0x6dmZUTEFkYUJjTlI3SlFZNEwvOUQyN2N3MWxmUjJGVmlHZko3UzczdE5vV3ZCSVF2eW9wR0tIc1JRTkFUMFNzNmxZM2RkV3pRcTRKMHozb3Ard2ttaUx2cTM4cnFmSkFjczFjeEcvOFlUT1hUak4tLUg4N2F2QTBrUWV1OVRiWHBGWFNVWmc9PQ%3D%3D--db9a034fcf29e4ee8b0854589bccf9bdaaeb2d2a;
-        path=/; HttpOnly
-      Etag:
+      etag: 
       - W/"c4ffe73710cfdc992b1e3285b060ce5b"
-      Status:
-      - 200 OK
-      Transfer-Encoding:
+      x-runtime: 
+      - "0.010243"
+      date: 
+      - Fri, 07 Jun 2019 18:54:34 GMT
+      transfer-encoding: 
       - chunked
-      Content-Type:
+      x-powered-by: 
+      - Phusion Passenger 5.3.4
+      content-type: 
       - application/json; charset=utf-8
-    body:
-      encoding: UTF-8
-      string: '{"name_like_score":2,"id":9198824,"uuid":"5eeaa231-26f8-45c4-b237-04358b3f9f36","language":"en","input":"tyler
-        vannurden, agent","parse_status":200,"parse_method":"R","parser_version":24,"contains_aka_or_fka":false,"people_cache":[{"id":444870,"given_name":"Tyler","surname":"Vannurden","secondary_name":"","suffix":"","prefix":"","salutation":"","alternate_name":"","credentials":"","uuid":"337e1d81-5e98-4eda-921c-2d7bcf82f165","language":"en","gender":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":"2018-02-06T16:04:35.000Z","updated_at":"2018-02-06T16:04:35.000Z"}],"organizations_cache":[],"job_titles_cache":null,"credentials_cache":null,"email_addresses_cache":null,"telephones_cache":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":"2019-05-28T23:00:11.000Z","updated_at":"2019-05-28T23:00:11.000Z"}'
-    http_version: 
-  recorded_at: Tue, 28 May 2019 23:02:39 GMT
-- request:
+      x-request-id: 
+      - 3656f4f3-eef0-4c33-9809-aa6727b726b7
+      status: 
+      - 200 OK
+      set-cookie: 
+      - _parse_name_session=cWlyV3JLbTFpc0tyTHFNWjlEcUxHcWdjN3JFcXAzYU80bURjUnZqdXNwT25WVzJKblRDR2JaQ0ErbXE5K3pVamNVa2UwdFNhWXBySW5aRHpjd3N6UG8yUDJlSHRQZWlFL2hkNlRzYVZVSFhzQ1l3WnpBdVNtK0h5NHkrZytUSHYtLVI5amRONlp5ZWwwNTAwalBQM0FjWkE9PQ%3D%3D--a930d584ccc3528c8ad02d0d160727774190fb25; path=/; HttpOnly
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      server: 
+      - Apache/2.4.18 (Ubuntu)
+      x-frame-options: 
+      - SAMEORIGIN
+      x-xss-protection: 
+      - 1; mode=block
+    body: 
+      string: "{\"name_like_score\":2,\"id\":9198824,\"uuid\":\"5eeaa231-26f8-45c4-b237-04358b3f9f36\",\"language\":\"en\",\"input\":\"tyler vannurden, agent\",\"parse_status\":200,\"parse_method\":\"R\",\"parser_version\":24,\"contains_aka_or_fka\":false,\"people_cache\":[{\"id\":444870,\"given_name\":\"Tyler\",\"surname\":\"Vannurden\",\"secondary_name\":\"\",\"suffix\":\"\",\"prefix\":\"\",\"salutation\":\"\",\"alternate_name\":\"\",\"credentials\":\"\",\"uuid\":\"337e1d81-5e98-4eda-921c-2d7bcf82f165\",\"language\":\"en\",\"gender\":null,\"created_by_user_id\":null,\"updated_by_user_id\":null,\"created_at\":\"2018-02-06T16:04:35.000Z\",\"updated_at\":\"2018-02-06T16:04:35.000Z\"}],\"organizations_cache\":[],\"job_titles_cache\":null,\"credentials_cache\":null,\"email_addresses_cache\":null,\"telephones_cache\":null,\"created_by_user_id\":null,\"updated_by_user_id\":null,\"created_at\":\"2019-05-28T23:00:11.000Z\",\"updated_at\":\"2019-05-28T23:00:11.000Z\"}"
+    http_version: "1.1"
+  recorded_at: Fri, 07 Jun 2019 18:54:34 GMT
+- request: 
     method: get
-    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=Tyler%20Vannurden,%20Agent
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=Tyler+Vannurden%2C+Agent
+    body: 
+      string: ""
+    headers: 
+      timeout: 
+      - "5"
+      accept-encoding: 
       - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
-      Authorization:
+      authorization: 
       - 66039622-9040-4964-bfe2-8ce4d1176724
-      Timeout:
-      - '5'
-      Host:
-      - v2.parse.name
-  response:
-    status:
+      accept: 
+      - application/json
+  response: 
+    status: 
       code: 200
       message: OK
-    headers:
-      Date:
-      - Tue, 28 May 2019 23:02:39 GMT
-      Server:
-      - Apache/2.4.29 (Ubuntu)
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      X-Request-Id:
-      - 8b4776cd-f4a6-462d-8096-d4a14b34db30
-      X-Runtime:
-      - '0.138157'
-      X-Powered-By:
-      - Phusion Passenger 5.0.30
-      Etag:
+    headers: 
+      etag: 
       - W/"2af60e2b68233bd1173768f9b87bc44a"
-      Status:
-      - 200 OK
-      Transfer-Encoding:
+      x-runtime: 
+      - "0.138666"
+      date: 
+      - Fri, 07 Jun 2019 18:54:35 GMT
+      transfer-encoding: 
       - chunked
-      Content-Type:
+      x-powered-by: 
+      - Phusion Passenger 5.0.30
+      content-type: 
       - application/json; charset=utf-8
-    body:
-      encoding: UTF-8
-      string: '{"base":{"input":"Tyler Vannurden, Agent","locale":"en-US"},"name":[{"given_name":"Tyler","surname":"Vannurden","job_title":["Agent"],"input_placement_scores":{"[\"given_name\",
-        \"surname\"]":1.514,"[\"surname\", \"given_name\"]":0.486,"max_candidate":["given_name","surname"]},"full_name":"Tyler
-        Vannurden"}]}'
-    http_version: 
-  recorded_at: Tue, 28 May 2019 23:02:40 GMT
-recorded_with: VCR 4.0.0
+      x-request-id: 
+      - ef4c32d7-e974-4e01-85e8-f48c57bbf9c6
+      status: 
+      - 200 OK
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      server: 
+      - Apache/2.4.29 (Ubuntu)
+      strict-transport-security: 
+      - max-age=31536000; includeSubDomains
+    body: 
+      string: "{\"base\":{\"input\":\"Tyler Vannurden, Agent\",\"locale\":\"en-US\"},\"name\":[{\"given_name\":\"Tyler\",\"surname\":\"Vannurden\",\"job_title\":[\"Agent\"],\"input_placement_scores\":{\"[\\\"given_name\\\", \\\"surname\\\"]\":1.514,\"[\\\"surname\\\", \\\"given_name\\\"]\":0.486,\"max_candidate\":[\"given_name\",\"surname\"]},\"full_name\":\"Tyler Vannurden\"}]}"
+    http_version: "1.1"
+  recorded_at: Fri, 07 Jun 2019 18:54:35 GMT
+recorded_with: VCR 2.9.2

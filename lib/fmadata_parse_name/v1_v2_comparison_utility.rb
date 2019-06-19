@@ -5,7 +5,7 @@ module FmadataParseName
   class V1V2ComparisonUtility
     attr_reader :diff_message
 
-    def initialize(input:, v1_result:, v2_result:)
+    def initialize(input, v1_result, v2_result)
       @v1 = v1_result
       @v2 = v2_result
       @input = input
@@ -69,17 +69,17 @@ module FmadataParseName
     end
 
     def name_metadata
-      %i(
-        alternate_name
-        salutations
-        given_name
-        secondary_name
-        surname
-        credentials
-        job_titles
-        prefixes
-        suffixes
-      )
+      [
+        :alternate_name,
+        :salutations,
+        :given_name,
+        :secondary_name,
+        :surname,
+        :credentials,
+        :job_titles,
+        :prefixes,
+        :suffixes
+      ]
     end
   end
 end

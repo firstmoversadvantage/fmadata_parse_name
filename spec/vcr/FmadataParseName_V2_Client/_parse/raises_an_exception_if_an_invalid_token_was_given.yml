@@ -1,50 +1,46 @@
----
-http_interactions:
-- request:
+--- 
+http_interactions: 
+- request: 
     method: get
-    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=first%20movers%20advantage
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=first+movers+advantage
+    body: 
+      string: ""
+    headers: 
+      timeout: 
+      - "5"
+      accept-encoding: 
       - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
-      Authorization:
+      authorization: 
       - abc
-      Timeout:
-      - '5'
-      Host:
-      - v2.parse.name
-  response:
-    status:
+      accept: 
+      - application/json
+  response: 
+    status: 
       code: 401
       message: Unauthorized
-    headers:
-      Date:
-      - Sun, 26 May 2019 17:45:23 GMT
-      Server:
-      - Apache/2.4.29 (Ubuntu)
-      Cache-Control:
-      - no-cache
-      X-Request-Id:
-      - 6ab98b34-c688-40c4-a8eb-42dc06156436
-      X-Runtime:
-      - '0.059714'
-      X-Powered-By:
-      - Phusion Passenger 5.0.30
-      Status:
-      - 401 Unauthorized
-      Transfer-Encoding:
+    headers: 
+      x-runtime: 
+      - "0.005691"
+      date: 
+      - Fri, 07 Jun 2019 18:54:36 GMT
+      transfer-encoding: 
       - chunked
-      Content-Type:
+      x-powered-by: 
+      - Phusion Passenger 5.0.30
+      content-type: 
       - application/json; charset=utf-8
-    body:
-      encoding: UTF-8
+      x-request-id: 
+      - ee78c4cd-43aa-4cf1-a994-69c03f297d78
+      status: 
+      - 401 Unauthorized
+      cache-control: 
+      - no-cache
+      server: 
+      - Apache/2.4.29 (Ubuntu)
+      strict-transport-security: 
+      - max-age=31536000; includeSubDomains
+    body: 
       string: "{}"
-    http_version: 
-  recorded_at: Sun, 26 May 2019 17:45:23 GMT
-recorded_with: VCR 4.0.0
+    http_version: "1.1"
+  recorded_at: Fri, 07 Jun 2019 18:54:36 GMT
+recorded_with: VCR 2.9.2
