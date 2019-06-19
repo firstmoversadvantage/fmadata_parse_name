@@ -20,8 +20,8 @@ Gem::Specification.new do |s|
   s.license       = 'MIT'
 
   s.add_runtime_dependency "rest-client", "~> 1.6.0"
-  s.add_runtime_dependency "json", "1.8.6"
+  s.add_runtime_dependency "json", "1.5.1"
   s.add_development_dependency "rspec", "~> 3.4"
-  s.add_development_dependency "vcr", "2.9.2"
+  s.add_development_dependency "vcr", "2.9.3"
   s.add_development_dependency "fakeweb"
 end
