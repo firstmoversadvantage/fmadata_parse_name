@@ -22,7 +22,7 @@ describe FmadataParseName::V1::Client do
         expect(response.people).to be_a(Array)
         expect(response.people.count).to eq(1)
         expect(response.people.first).to have_attributes(
-          :salutations => 'Mr',
+          :salutations => ['Mr'],
           :given_name => 'Tyler',
           :secondary_name => 'Kenneth',
           :surname => 'Vannurden'
@@ -39,11 +39,12 @@ describe FmadataParseName::V1::Client do
         response = subject.parse('tyler vannurden')
         expect(response.people.first).to have_attributes(
           :secondary_name => nil,
-          :salutations => nil,
-          :credentials => nil,
-          :prefixes => nil,
-          :suffixes => nil,
-          :alternate_name => nil
+          :salutations => [],
+          :credentials => [],
+          :prefixes => [],
+          :suffixes => [],
+          :alternate_name => [],
+          :job_titles => []
         )
       end
     end

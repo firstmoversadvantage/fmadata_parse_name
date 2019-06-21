@@ -26,10 +26,6 @@ module FmadataParseName
         !success?
       end
 
-      def errors
-
-      end
-
       private
 
       def name_like_score

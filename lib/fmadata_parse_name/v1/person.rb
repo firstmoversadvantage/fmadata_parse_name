@@ -8,11 +8,12 @@ module FmadataParseName
         @secondary_name = v1_response_without_blanks['secondary_name']
         @surname = v1_response_without_blanks['surname']
 
-        @salutations = v1_response_without_blanks['salutation']
-        @credentials = v1_response_without_blanks['credentials']
-        @prefixes = v1_response_without_blanks['prefix']
-        @suffixes = v1_response_without_blanks['suffix']
-        @alternate_name = v1_response_without_blanks['alternate_name']
+        @job_titles = []
+        @salutations = [v1_response_without_blanks['salutation']].compact
+        @credentials = [v1_response_without_blanks['credentials']].compact
+        @prefixes = [v1_response_without_blanks['prefix']].compact
+        @suffixes = [v1_response_without_blanks['suffix']].compact
+        @alternate_name = [v1_response_without_blanks['alternate_name']].compact
       end
 
       private

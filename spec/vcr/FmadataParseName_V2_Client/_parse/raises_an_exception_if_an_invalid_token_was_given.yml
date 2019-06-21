@@ -1,4 +1,5 @@
 --- 
+recorded_with: VCR 2.9.2
 http_interactions: 
 - request: 
     method: get
@@ -6,41 +7,40 @@ http_interactions:
     body: 
       string: ""
     headers: 
-      timeout: 
-      - "5"
-      accept-encoding: 
-      - gzip, deflate
-      authorization: 
-      - abc
       accept: 
       - application/json
+      timeout: 
+      - "5"
+      authorization: 
+      - abc
+      accept-encoding: 
+      - gzip, deflate
   response: 
     status: 
       code: 401
       message: Unauthorized
     headers: 
-      x-runtime: 
-      - "0.005691"
-      date: 
-      - Fri, 07 Jun 2019 18:54:36 GMT
-      transfer-encoding: 
-      - chunked
       x-powered-by: 
       - Phusion Passenger 5.0.30
+      x-runtime: 
+      - "0.005695"
+      server: 
+      - Apache/2.4.29 (Ubuntu)
+      transfer-encoding: 
+      - chunked
+      x-request-id: 
+      - 1c0e59c9-d1e3-4d9b-9b22-ad4313377980
+      strict-transport-security: 
+      - max-age=31536000; includeSubDomains
       content-type: 
       - application/json; charset=utf-8
-      x-request-id: 
-      - ee78c4cd-43aa-4cf1-a994-69c03f297d78
       status: 
       - 401 Unauthorized
       cache-control: 
       - no-cache
-      server: 
-      - Apache/2.4.29 (Ubuntu)
-      strict-transport-security: 
-      - max-age=31536000; includeSubDomains
+      date: 
+      - Fri, 21 Jun 2019 14:46:15 GMT
     body: 
       string: "{}"
     http_version: "1.1"
-  recorded_at: Fri, 07 Jun 2019 18:54:36 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 21 Jun 2019 14:46:15 GMT

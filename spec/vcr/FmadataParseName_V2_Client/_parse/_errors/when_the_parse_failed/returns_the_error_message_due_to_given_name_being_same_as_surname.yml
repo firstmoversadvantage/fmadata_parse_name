@@ -1,4 +1,5 @@
 --- 
+recorded_with: VCR 2.9.2
 http_interactions: 
 - request: 
     method: get
@@ -6,43 +7,42 @@ http_interactions:
     body: 
       string: ""
     headers: 
-      timeout: 
-      - "5"
-      accept-encoding: 
-      - gzip, deflate
-      authorization: 
-      - 66039622-9040-4964-bfe2-8ce4d1176724
       accept: 
       - application/json
+      timeout: 
+      - "5"
+      authorization: 
+      - 66039622-9040-4964-bfe2-8ce4d1176724
+      accept-encoding: 
+      - gzip, deflate
   response: 
     status: 
       code: 400
       message: Bad Request
     headers: 
-      x-runtime: 
-      - "0.114370"
-      date: 
-      - Fri, 07 Jun 2019 18:54:37 GMT
-      transfer-encoding: 
-      - chunked
       x-powered-by: 
       - Phusion Passenger 5.0.30
+      x-runtime: 
+      - "0.114035"
+      server: 
+      - Apache/2.4.29 (Ubuntu)
+      transfer-encoding: 
+      - chunked
+      x-request-id: 
+      - 65ff18fd-4206-41f3-97c3-9a9343617d92
+      connection: 
+      - close
+      strict-transport-security: 
+      - max-age=31536000; includeSubDomains
       content-type: 
       - application/json; charset=utf-8
-      x-request-id: 
-      - fc382c9b-5e18-494c-acd2-c7ed380755c9
       status: 
       - 400 Bad Request
       cache-control: 
       - no-cache
-      server: 
-      - Apache/2.4.29 (Ubuntu)
-      strict-transport-security: 
-      - max-age=31536000; includeSubDomains
-      connection: 
-      - close
+      date: 
+      - Fri, 21 Jun 2019 14:46:16 GMT
     body: 
       string: "{\"base\":{\"input\":\"tyler tyler\",\"locale\":\"en-US\",\"errors\":{\"input\":[\"given_name was the same as surname\"]}}}"
     http_version: "1.1"
-  recorded_at: Fri, 07 Jun 2019 18:54:38 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 21 Jun 2019 14:46:16 GMT
