@@ -13,6 +13,8 @@ Gem::Specification.new do |s|
   all_files       = `git ls-files -z`.split("\x0")
   s.files         = all_files.grep(%r!^(exe|lib|rubocop)/|^.rubocop.yml$!)
 
+  s.required_ruby_version = '>= 2.3.8'
+
   s.require_paths = ["lib"]
   s.homepage      = 'https://v2.parse.name'
   s.license       = 'MIT'
