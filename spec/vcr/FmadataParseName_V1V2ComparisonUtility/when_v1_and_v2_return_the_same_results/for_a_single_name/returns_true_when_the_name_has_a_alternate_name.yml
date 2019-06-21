@@ -1,0 +1,113 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://parse.name/names/parse.json?q=Johnny%20(Joe)%20Jackson&token=7d112490-ff1e-4759-9af1-a3b30a2cc87a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin17.7.0 x86_64) ruby/2.4.5p335
+      Timeout:
+      - '5'
+      Host:
+      - parse.name
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Jun 2019 00:42:31 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.062578'
+      X-Request-Id:
+      - 3edf71f3-40c9-4603-a4dc-85cd2e8aa677
+      X-Powered-By:
+      - Phusion Passenger 5.3.4
+      Set-Cookie:
+      - _parse_name_session=VGw5SnY0T0Rqb28wWUcydEZ2Zm5KZzNINlBZSGJtd1JmZFFoOWQ4S1I5WGtORVpnT2ZaRmpUY2ZoODVlaVUwNFNjSGpiN3o5U2JHbVhERmw3bEZFVFFGS244MmZwb0hiNEttN0JzU2xyalRSd2hQOXFPdmNzVE16ekZNSExKNkotLUFJcExTL2pXQzMrSTVEVisxaFA1aEE9PQ%3D%3D--46b7681b7f236d869fed9cf806c95235ea35be82;
+        path=/; HttpOnly
+      Etag:
+      - W/"f1d1a4db5a4303e80993b8bcc7b2dfce"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":9557542,"uuid":"35f3cbe1-fbbd-40a9-ab4f-09b44aeb667d","language":"en","input":"johnny
+        (joe) jackson","parse_status":200,"parse_method":"R","parser_version":24,"contains_aka_or_fka":false,"people_cache":[{"id":8487518,"uuid":"69d38682-a062-4faf-9755-226d9f285791","language":"en","salutation":"","prefix":"","given_name":"Johnny","secondary_name":"","surname":"Jackson","suffix":"","alternate_name":"Joe","credentials":"","gender":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":"2019-06-21T00:42:31.742Z","updated_at":"2019-06-21T00:42:31.742Z"}],"organizations_cache":[],"job_titles_cache":null,"credentials_cache":null,"email_addresses_cache":null,"telephones_cache":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":"2019-06-21T00:42:31.763Z","updated_at":"2019-06-21T00:42:31.763Z","name_like_score":2}'
+    http_version: 
+  recorded_at: Fri, 21 Jun 2019 00:42:31 GMT
+- request:
+    method: get
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=Johnny%20(Joe)%20Jackson
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin17.7.0 x86_64) ruby/2.4.5p335
+      Authorization:
+      - 66039622-9040-4964-bfe2-8ce4d1176724
+      Timeout:
+      - '5'
+      Host:
+      - v2.parse.name
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Jun 2019 00:42:32 GMT
+      Server:
+      - Apache/2.4.29 (Ubuntu)
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Request-Id:
+      - 4f335ff0-5a8f-4d75-8b90-3a7aa87b179b
+      X-Runtime:
+      - '0.281824'
+      X-Powered-By:
+      - Phusion Passenger 5.0.30
+      Etag:
+      - W/"9063fda3b04ce71e8ea27c66bc687261"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"base":{"input":"Johnny (Joe) Jackson","locale":"en-US"},"name":[{"alternate_name":["Joe"],"given_name":"Johnny","surname":"Jackson","input_placement_scores":{"[\"given_name\",
+        \"surname\"]":1.966,"[\"surname\", \"given_name\"]":0.034,"max_candidate":["given_name","surname"]},"full_name":"Johnny
+        Jackson"}]}'
+    http_version: 
+  recorded_at: Fri, 21 Jun 2019 00:42:32 GMT
+recorded_with: VCR 4.0.0

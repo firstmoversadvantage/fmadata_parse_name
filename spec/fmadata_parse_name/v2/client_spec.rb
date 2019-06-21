@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe FmadataParseName::V2::Client do
-  subject { described_class.new('66039622-9040-4964-bfe2-8ce4d1176724') }
+  subject { described_class.new('used-to-be-valid-token') }
 
   describe '#parse' do
     it 'raises an exception if token was never given' do
@@ -16,21 +16,21 @@ describe FmadataParseName::V2::Client do
       }.to raise_error(RestClient::Unauthorized, '401 Unauthorized')
     end
 
-    it 'returns a Response object if the parse failed', :vcr do
+    it 'returns a Response object if the parse failed', vcr: vcr_spec_options do
       response = subject.parse('tyler')
       expect(response).to be_a(FmadataParseName::V2::Response)
     end
 
     describe '#errors' do
       context 'when the parse succeeded' do
-        it 'returns an empty hash', :vcr do
+        it 'returns an empty hash', vcr: vcr_spec_options do
           response = subject.parse('first movers advantage')
           expect(response.errors).to eq({})
         end
       end
 
       context 'when the parse failed' do
-        it 'returns the error message due to ambiguous input', :vcr do
+        it 'returns the error message due to ambiguous input', vcr: vcr_spec_options do
           response = subject.parse('tyler')
           expect(response.errors).to eq(
             {
@@ -39,7 +39,7 @@ describe FmadataParseName::V2::Client do
           )
         end
 
-        it 'returns the error message due to given name being same as surname', :vcr do
+        it 'returns the error message due to given name being same as surname', vcr: vcr_spec_options do
           response = subject.parse('tyler tyler')
           expect(response.errors).to eq(
             { "input" => ["given_name was the same as surname"] }
@@ -49,7 +49,7 @@ describe FmadataParseName::V2::Client do
     end
 
     context 'with a single name' do
-      it 'returns an array with a Person object', :vcr do
+      it 'returns an array with a Person object', vcr: vcr_spec_options do
         response = subject.parse('mr. tyler kenneth vannurden, President')
         expect(response.people).to be_a(Array)
         expect(response.people.count).to eq(1)
@@ -62,7 +62,7 @@ describe FmadataParseName::V2::Client do
         )
       end
 
-      it 'returns an empty array for the :organizations key', :vcr do
+      it 'returns an empty array for the :organizations key', vcr: vcr_spec_options do
         response = subject.parse('mr. tyler kenneth vannurden, President')
         expect(response.organizations).to be_a(Array)
         expect(response.organizations.empty?).to be true
@@ -70,7 +70,7 @@ describe FmadataParseName::V2::Client do
     end
 
     context 'with two names' do
-      it 'returns an array with two Person objects', :vcr do
+      it 'returns an array with two Person objects', vcr: vcr_spec_options do
         response = subject.parse('Tyler and Nolan Vannurden')
         expect(response.people.count).to eq(2)
 
@@ -87,7 +87,7 @@ describe FmadataParseName::V2::Client do
     end
 
     context 'with an organization' do
-      it 'returns an array with an Organization object', :vcr do
+      it 'returns an array with an Organization object', vcr: vcr_spec_options do
         response = subject.parse('first movers advantage')
         expect(response.organizations.count).to eq(1)
 
@@ -96,7 +96,7 @@ describe FmadataParseName::V2::Client do
         )
       end
 
-      it 'returns an empty array for the :people key', :vcr do
+      it 'returns an empty array for the :people key', vcr: vcr_spec_options do
         response = subject.parse('first movers advantage')
         expect(response.people).to be_a(Array)
         expect(response.people.empty?).to be true
@@ -104,7 +104,7 @@ describe FmadataParseName::V2::Client do
     end
 
     context 'with a name and an organization' do
-      it 'returns an array with a Person object and Organization object', :vcr do
+      it 'returns an array with a Person object and Organization object', vcr: vcr_spec_options do
         response = subject.parse('tyler vannurden, first movers advantage')
         expect(response.people.count).to eq(1)
         expect(response.organizations.count).to eq(1)

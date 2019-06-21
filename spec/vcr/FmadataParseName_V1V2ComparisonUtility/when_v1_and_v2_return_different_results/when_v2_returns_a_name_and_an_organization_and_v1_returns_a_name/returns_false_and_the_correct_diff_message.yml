@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://parse.name/names/parse.json?q=Mark%20Zuckerberg,%20Facebook%20Inc&token=c104048a-1f32-467c-9022-4b90d8893f85
+    uri: http://parse.name/names/parse.json?q=Mark%20Zuckerberg,%20Facebook%20Inc&token=7d112490-ff1e-4759-9af1-a3b30a2cc87a
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,7 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      - rest-client/2.0.2 (darwin17.7.0 x86_64) ruby/2.4.5p335
       Timeout:
       - '5'
       Host:
@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 28 May 2019 22:54:11 GMT
+      - Fri, 21 Jun 2019 00:11:04 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       Cache-Control:
@@ -35,16 +35,16 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.049178'
+      - '0.009027'
       X-Request-Id:
-      - '0811d911-6bc7-45c4-b312-511851d3b00a'
+      - c985f370-076d-4110-8ea4-48cb6a6a5af2
       X-Powered-By:
       - Phusion Passenger 5.3.4
       Set-Cookie:
-      - _parse_name_session=NDNQSkdONEw5M203N044eGdQNFRaWXdoWEhienY5c1RnU25TS2Y5NTBFMlJnZ1NURktRQWk1dTdrMmNFSVI4RUdGbnlhYmI3TjUwakROVHhnMUVtR1BOTW9SN2VvT1g4V1hZSFlyMnJPNE84Sm5tRWdWU3IzbUlaR0RrMStDZXotLXNIZFdCUXY2bEgzTERtamxnSG16anc9PQ%3D%3D--df7e36fa58d4720c3befef330c10fdb05401415a;
+      - _parse_name_session=RTh6NGovRjV2NmtZOVBpQkswT05zdzY5Q0JCZjkraER3UWNPQjQxWXhMZFlrUUFFTVY0VzBMTjdOTk1HY3Era1hIOUcwZlhoTHY0NDBNdDROd3VWazVFaEVBUWF1REh6dkdlQUZoS2pLaUhnYWZsVWE1WDR3QlJidmxwcEhoY0ItLUpmdkt6WHltdHlLd3N4UkRxY3d6VFE9PQ%3D%3D--37b8d0b3eb254ab07955e17f571851b59719806c;
         path=/; HttpOnly
       Etag:
-      - W/"d70a81272c44287b43081487df776c23"
+      - W/"db8761b7b7a62e5a635170477b06b04a"
       Status:
       - 200 OK
       Transfer-Encoding:
@@ -53,11 +53,11 @@ http_interactions:
       - application/json; charset=utf-8
     body:
       encoding: UTF-8
-      string: '{"id":9198820,"uuid":"0cce1375-8325-4b03-bed6-9c009f11c772","language":"en","input":"mark
+      string: '{"name_like_score":2,"id":9198820,"uuid":"0cce1375-8325-4b03-bed6-9c009f11c772","language":"en","input":"mark
         zuckerberg, facebook inc","parse_status":200,"parse_method":"R","parser_version":24,"contains_aka_or_fka":false,"people_cache":[],"organizations_cache":[{"id":489164,"uuid":"39ce1b06-cd08-4cd4-9bdd-af30ae7f7c74","name":"Mark
-        Zuckerberg, Facebook Inc","is_dba":null,"created_at":"2019-05-28T22:54:11.751Z","updated_at":"2019-05-28T22:54:11.751Z"}],"job_titles_cache":null,"credentials_cache":null,"email_addresses_cache":null,"telephones_cache":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":"2019-05-28T22:54:11.765Z","updated_at":"2019-05-28T22:54:11.765Z","name_like_score":2}'
+        Zuckerberg, Facebook Inc","is_dba":null,"created_at":"2019-05-28T22:54:11.751Z","updated_at":"2019-05-28T22:54:11.751Z"}],"job_titles_cache":null,"credentials_cache":null,"email_addresses_cache":null,"telephones_cache":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":"2019-05-28T22:54:12.000Z","updated_at":"2019-05-28T22:54:12.000Z"}'
     http_version: 
-  recorded_at: Tue, 28 May 2019 22:54:12 GMT
+  recorded_at: Fri, 21 Jun 2019 00:11:04 GMT
 - request:
     method: get
     uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=Mark%20Zuckerberg,%20Facebook%20Inc
@@ -70,7 +70,7 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      - rest-client/2.0.2 (darwin17.7.0 x86_64) ruby/2.4.5p335
       Authorization:
       - 66039622-9040-4964-bfe2-8ce4d1176724
       Timeout:
@@ -83,7 +83,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 28 May 2019 22:54:12 GMT
+      - Fri, 21 Jun 2019 00:11:04 GMT
       Server:
       - Apache/2.4.29 (Ubuntu)
       Cache-Control:
@@ -91,9 +91,9 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       X-Request-Id:
-      - 2cbe024d-8c8b-4ec6-b10e-9731c8cbd78c
+      - '028b5520-413a-4ecb-95c4-823c93c4120e'
       X-Runtime:
-      - '0.230366'
+      - '0.320417'
       X-Powered-By:
       - Phusion Passenger 5.0.30
       Etag:
@@ -110,5 +110,5 @@ http_interactions:
         \"surname\"]":1.991,"[\"surname\", \"given_name\"]":0.009,"max_candidate":["given_name","surname"]},"full_name":"Mark
         Zuckerberg"}],"organization":[{"name":"Facebook Inc"}]}'
     http_version: 
-  recorded_at: Tue, 28 May 2019 22:54:12 GMT
+  recorded_at: Fri, 21 Jun 2019 00:11:05 GMT
 recorded_with: VCR 4.0.0

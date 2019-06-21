@@ -1,0 +1,113 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://parse.name/names/parse.json?q=BAGENSTOSE%20ABNER%20H%20III&token=7d112490-ff1e-4759-9af1-a3b30a2cc87a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin17.7.0 x86_64) ruby/2.4.5p335
+      Timeout:
+      - '5'
+      Host:
+      - parse.name
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Jun 2019 00:28:21 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.008558'
+      X-Request-Id:
+      - 72ada025-9a38-43da-a526-16bac224cec6
+      X-Powered-By:
+      - Phusion Passenger 5.3.4
+      Set-Cookie:
+      - _parse_name_session=eG1Pb1h1MmpzOUMvVlRLUG1YUmZ6M2Z0WmRYQWlNckVTM1VQZGQ1YzlPWklSRUg1bFk1bzN1dW5JL1Q0OU9jSmF0NTVpcnFVc1gxMjlVUmNldWVQKzJjbTMzQXdGcGZVVDNtV3U4S00wWXlXR1hlVW9iOXhxMWY5aWVCRnVQNFUtLVhYaGM0NVJDR3JiV0loS3dyOEFxS0E9PQ%3D%3D--1a4b8e06b977be28b29c8f83e28edeab591e0dce;
+        path=/; HttpOnly
+      Etag:
+      - W/"2429ec4f7b08964b00ddd880699aaa1f"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"name_like_score":3,"id":492093,"uuid":"247dc424-c3ed-4d52-b117-f29b2ee3a976","language":"en","input":"bagenstose
+        abner h iii","parse_status":200,"parse_method":"R","parser_version":24,"contains_aka_or_fka":false,"people_cache":[{"id":473681,"uuid":"f1202c63-c843-4314-96bd-2f74f6325741","language":"en","salutation":"","prefix":"","given_name":"Abner","secondary_name":"H","surname":"Bagenstose","suffix":"III","alternate_name":"","credentials":"","gender":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":"2018-02-07T20:12:55.931Z","updated_at":"2018-02-07T20:12:55.931Z"}],"organizations_cache":[],"job_titles_cache":null,"credentials_cache":null,"email_addresses_cache":null,"telephones_cache":null,"created_by_user_id":null,"updated_by_user_id":null,"created_at":"2018-02-07T20:12:56.000Z","updated_at":"2018-02-07T20:12:56.000Z"}'
+    http_version: 
+  recorded_at: Fri, 21 Jun 2019 00:28:22 GMT
+- request:
+    method: get
+    uri: https://v2.parse.name/api/v2/names/parse?locale=en-US&q=BAGENSTOSE%20ABNER%20H%20III
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin17.7.0 x86_64) ruby/2.4.5p335
+      Authorization:
+      - 66039622-9040-4964-bfe2-8ce4d1176724
+      Timeout:
+      - '5'
+      Host:
+      - v2.parse.name
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Jun 2019 00:28:22 GMT
+      Server:
+      - Apache/2.4.29 (Ubuntu)
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Request-Id:
+      - b958ea15-c3c9-4ee1-8486-66aa711547da
+      X-Runtime:
+      - '0.099178'
+      X-Powered-By:
+      - Phusion Passenger 5.0.30
+      Etag:
+      - W/"16beda1dc49a7176fdd401e73bdbacf2"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"base":{"input":"BAGENSTOSE ABNER H III","locale":"en-US"},"name":[{"given_name":"Abner","secondary_name":"H","surname":"Bagenstose","suffix":["III"],"input_placement_scores":{"[\"given_name\",
+        \"surname\"]":0.53,"[\"surname\", \"given_name\"]":1.47,"max_candidate":["surname","given_name"]},"full_name":"Abner
+        H Bagenstose"}]}'
+    http_version: 
+  recorded_at: Fri, 21 Jun 2019 00:28:23 GMT
+recorded_with: VCR 4.0.0

@@ -19,11 +19,26 @@ require 'fmadata_parse_name'
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+def vcr_spec_options
+  {
+    match_requests_on: [
+      :method,
+      :host,
+      :path,
+      :body,
+      :uri_without_token
+    ]
+  }
+end
+
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/vcr'
   # your HTTP request service. You can also use fakeweb, webmock, and more
   c.hook_into :webmock
   c.configure_rspec_metadata!
+
+  without_token = VCR.request_matchers.uri_without_param(:token)
+  c.register_request_matcher(:uri_without_token, &without_token)
 end
 
 RSpec.configure do |config|

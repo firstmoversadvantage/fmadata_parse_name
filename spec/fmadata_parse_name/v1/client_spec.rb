@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe FmadataParseName::V1::Client do
-  subject { described_class.new('c104048a-1f32-467c-9022-4b90d8893f85') }
+  subject { described_class.new('used-to-be-valid-token') }
 
   describe '#parse' do
     it 'raises an exception if token was never given' do
@@ -17,39 +17,42 @@ describe FmadataParseName::V1::Client do
     end
 
     describe 'with a single name' do
-      it 'returns an array with a single Person object', :vcr do
+      it 'returns an array with a single Person object', vcr: vcr_spec_options do
         response = subject.parse('mr. tyler kenneth vannurden')
         expect(response.people).to be_a(Array)
         expect(response.people.count).to eq(1)
         expect(response.people.first).to have_attributes(
-          salutations: 'Mr',
+          salutations: ['Mr'],
           given_name: 'Tyler',
           secondary_name: 'Kenneth',
-          surname: 'Vannurden'
+          surname: 'Vannurden',
+          alternate_name: [],
+          credentials: [],
+          prefixes: []
         )
       end
 
-      it 'returns an empty array for the :organizations key', :vcr do
+      it 'returns an empty array for the :organizations key', vcr: vcr_spec_options do
         response = subject.parse('tyler kenneth vannurden')
         expect(response.organizations).to be_a(Array)
         expect(response.organizations.empty?).to be true
       end
 
-      it 'assigns nil values for attributes that are empty', :vcr do
+      it 'assigns nil values for attributes that are empty', vcr: vcr_spec_options do
         response = subject.parse('tyler vannurden')
         expect(response.people.first).to have_attributes(
           secondary_name: nil,
-          salutations: nil,
-          credentials: nil,
-          prefixes: nil,
-          suffixes: nil,
-          alternate_name: nil
+          suffixes: [],
+          alternate_name: [],
+          credentials: [],
+          prefixes: [],
+          salutations: []
         )
       end
     end
 
     describe 'with an organization' do
-      it 'returns an array with an Organization object if an organization is entered', :vcr do
+      it 'returns an array with an Organization object if an organization is entered', vcr: vcr_spec_options do
         response = subject.parse('first movers advantage, llc')
         expect(response.organizations.count).to eq(1)
 
@@ -58,7 +61,7 @@ describe FmadataParseName::V1::Client do
         )
       end
 
-      it 'returns an empty array for the :people key', :vcr do
+      it 'returns an empty array for the :people key', vcr: vcr_spec_options do
         response = subject.parse('first movers advantage, llc')
         expect(response.people).to be_a(Array)
         expect(response.people.empty?).to be true
