@@ -97,7 +97,8 @@ describe FmadataParseName::V1V2ComparisonUtility do
           comparison = described_class.new(name, v1_result, v2_result)
 
           expect(comparison.compare).to be false
-          expect(comparison.diff_message).to eq('metadata: job_titles failed. v1: null v2: Agent')
+
+          expect(comparison.diff_message).to eq('metadata: job_titles failed. v1: [] v2: ["Agent"]')
         end
       end
     end

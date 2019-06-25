@@ -9,16 +9,14 @@ module FmadataParseName
         @people = []
         @organizations = []
 
-        if @code == 200
-          v2_json_response['name'] && v2_json_response['name'].each do |parsed_name|
-            @people << Person.new(parsed_name)
-          end
+        return unless @code == 200
 
-          v2_json_response['organization'] && v2_json_response['organization'].each do |parsed_org|
-            @organizations << Organization.new(parsed_org)
-          end
-        else
+        v2_json_response['name'] && v2_json_response['name'].each do |parsed_name|
+          @people << Person.new(parsed_name)
+        end
 
+        v2_json_response['organization'] && v2_json_response['organization'].each do |parsed_org|
+          @organizations << Organization.new(parsed_org)
         end
       end
 

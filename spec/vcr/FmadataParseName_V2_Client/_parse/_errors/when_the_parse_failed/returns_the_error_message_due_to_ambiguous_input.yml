@@ -6,43 +6,43 @@ http_interactions:
     body: 
       string: ""
     headers: 
-      timeout: 
-      - "5"
-      accept-encoding: 
-      - gzip, deflate
-      authorization: 
-      - 66039622-9040-4964-bfe2-8ce4d1176724
       accept: 
       - application/json
+      authorization: 
+      - 66039622-9040-4964-bfe2-8ce4d1176724
+      accept-encoding: 
+      - gzip, deflate
+      timeout: 
+      - "5"
   response: 
     status: 
       code: 400
       message: Bad Request
     headers: 
-      x-runtime: 
-      - "0.075582"
-      date: 
-      - Fri, 07 Jun 2019 18:54:37 GMT
-      transfer-encoding: 
-      - chunked
+      server: 
+      - Apache/2.4.29 (Ubuntu)
       x-powered-by: 
       - Phusion Passenger 5.0.30
-      content-type: 
-      - application/json; charset=utf-8
       x-request-id: 
-      - 1d018ade-725b-4c69-99bb-f482d0bcb766
+      - 827655df-6424-4d89-a2c9-57c3c25dc0a8
+      strict-transport-security: 
+      - max-age=31536000; includeSubDomains
+      transfer-encoding: 
+      - chunked
+      date: 
+      - Tue, 25 Jun 2019 03:58:40 GMT
       status: 
       - 400 Bad Request
       cache-control: 
       - no-cache
-      server: 
-      - Apache/2.4.29 (Ubuntu)
-      strict-transport-security: 
-      - max-age=31536000; includeSubDomains
+      content-type: 
+      - application/json; charset=utf-8
       connection: 
       - close
+      x-runtime: 
+      - "0.103159"
     body: 
       string: "{\"base\":{\"input\":\"tyler\",\"locale\":\"en-US\",\"errors\":{\"input\":[\"could not be distinguished between a name or organization\"]}}}"
     http_version: "1.1"
-  recorded_at: Fri, 07 Jun 2019 18:54:37 GMT
+  recorded_at: Tue, 25 Jun 2019 03:58:39 GMT
 recorded_with: VCR 2.9.2
