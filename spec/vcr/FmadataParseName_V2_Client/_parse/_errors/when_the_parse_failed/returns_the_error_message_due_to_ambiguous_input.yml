@@ -1,5 +1,4 @@
 --- 
-recorded_with: VCR 2.9.2
 http_interactions: 
 - request: 
     method: get
@@ -7,42 +6,43 @@ http_interactions:
     body: 
       string: ""
     headers: 
-      authorization: 
-      - 66039622-9040-4964-bfe2-8ce4d1176724
       accept: 
       - application/json
-      timeout: 
-      - "5"
+      authorization: 
+      - 66039622-9040-4964-bfe2-8ce4d1176724
       accept-encoding: 
       - gzip, deflate
+      timeout: 
+      - "5"
   response: 
     status: 
-      code: 200
-      message: OK
+      code: 400
+      message: Bad Request
     headers: 
-      x-runtime: 
-      - "0.021689"
-      x-request-id: 
-      - 49969e45-48b3-474e-b855-82c89564c2c6
-      etag: 
-      - W/"a68099d04bd77aee0e8ceea861d7f112"
-      strict-transport-security: 
-      - max-age=31536000; includeSubDomains
-      cache-control: 
-      - max-age=0, private, must-revalidate
       server: 
       - Apache/2.4.29 (Ubuntu)
       x-powered-by: 
       - Phusion Passenger 5.0.30
+      x-request-id: 
+      - 827655df-6424-4d89-a2c9-57c3c25dc0a8
+      strict-transport-security: 
+      - max-age=31536000; includeSubDomains
       transfer-encoding: 
       - chunked
+      date: 
+      - Tue, 25 Jun 2019 03:58:40 GMT
       status: 
-      - 200 OK
+      - 400 Bad Request
+      cache-control: 
+      - no-cache
       content-type: 
       - application/json; charset=utf-8
-      date: 
-      - Fri, 21 Jun 2019 14:57:53 GMT
+      connection: 
+      - close
+      x-runtime: 
+      - "0.103159"
     body: 
       string: "{\"base\":{\"input\":\"tyler\",\"locale\":\"en-US\",\"errors\":{\"input\":[\"could not be distinguished between a name or organization\"]}}}"
     http_version: "1.1"
-  recorded_at: Fri, 21 Jun 2019 14:57:53 GMT
+  recorded_at: Tue, 25 Jun 2019 03:58:39 GMT
+recorded_with: VCR 2.9.2
