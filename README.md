@@ -45,15 +45,35 @@ v2_api_token = 'my-v2-api-token'
 ```
 
 The `#parse` method will return a `Response` object, which responds to the following instance methods:
+
+#### `#people`
+An Array of `Person` objects, which responds to:
 ```
-#people => Array of People objects
-#organizations => Array of Organization objects
+#given_name
+#secondary_name
+#surname
+#salutations
+#credentials
+#job_titles
+#prefixes
+#suffixes
+#alternate_name
+```
+
+#### `#organizations`
+An Array of `Organization` objects, which responds to:
+```
+#name
+```
+
+#### It also responds to these instance methods:
+```
 #success? => True or False representing whether or not we could parse the input succcessfully
 #failure?
 #errors => Hash of errors returned from the parser
 ```
 
-After parsing, you should always check whether or not the parse was successful, because exceptions are not raised automatically if a parse was unsuccessful.
+**After parsing, you should always check whether or not the parse was successful, because exceptions are not raised automatically if a parse was unsuccessful.**
 
 ```ruby
 response = @v2_client.parse('Tyler')
