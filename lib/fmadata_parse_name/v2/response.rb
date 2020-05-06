@@ -27,7 +27,7 @@ module FmadataParseName
       end
 
       def failure?
-        !success
+        !success?
       end
 
       def errors
