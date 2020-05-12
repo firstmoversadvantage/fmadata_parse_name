@@ -12,6 +12,8 @@ module FmadataParseName
         @prefixes = v2_parse_response['prefix'] || []
         @suffixes = v2_parse_response['suffix'] || []
         @alternate_name = v2_parse_response['alternate_name'] || []
+
+        @name_like_score = v2_parse_response['name_like_score']
       end
     end
   end

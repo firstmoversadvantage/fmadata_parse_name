@@ -8,6 +8,7 @@ module FmadataParseName
                 :job_titles,
                 :prefixes,
                 :suffixes,
-                :alternate_name
+                :alternate_name,
+                :name_like_score
   end
 end

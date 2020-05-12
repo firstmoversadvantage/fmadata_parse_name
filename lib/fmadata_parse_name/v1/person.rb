@@ -14,6 +14,8 @@ module FmadataParseName
         @prefixes = [v1_response_without_blanks['prefix']].compact
         @suffixes = [v1_response_without_blanks['suffix']].compact
         @alternate_name = [v1_response_without_blanks['alternate_name']].compact
+
+        @name_like_score = v1_response_without_blanks['name_like_score']
       end
 
       private
