@@ -10,8 +10,10 @@ module FmadataParseName
           raise 'No authentication token given'
         end
 
+        url = set_url
+
         response = RestClient.get(
-          'https://v2.parse.name/api/v2/names/parse',
+          url,
           params: { q: input, locale: 'en-US' },
           Authorization: @token,
           Accept: 'application/json',
@@ -25,6 +27,13 @@ module FmadataParseName
         raise e if e.response.code == 401
 
         Response.new(JSON(e.response.body), e.response.code)
+      end
+
+      private
+      def set_url
+        host_name = ENV['PARSE_NAME_HOST'] || 'https://v2.parse.name/'
+
+        host_name + "api/v2/names/parse"
       end
     end
   end

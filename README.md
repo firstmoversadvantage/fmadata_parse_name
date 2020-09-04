@@ -12,6 +12,14 @@ A Ruby gem for communicating with the v1 and v2 name parsing API services.
 gem 'fmadata_parse_name', '~> 1.0', git: 'git@github.com:firstmoversadvantage/fmadata_parse_name.git'
 ```
 
+OPTIONAL
+You can set PARSE_NAME_HOST env variable in .env file. This might be helpful for development purposes if you need parse.name running locally on your machine.
+Remember, to change also V2_PARSE_NAME_TOKEN env to the token of one of your locally existing users.
+
+```
+PARSE_NAME_HOST=http://localhost:3000/
+```
+
 ## Getting Started
 
 ### Setup
