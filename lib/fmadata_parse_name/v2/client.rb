@@ -1,7 +1,5 @@
 module FmadataParseName
   module V2
-    class GatewayError < StandardError; end
-
     class Client
       def initialize(token)
         @token = token
@@ -25,13 +23,6 @@ module FmadataParseName
         json_response = JSON(response)
 
         Response.new(json_response, 200)
-      rescue JSON::ParserError => e
-        raise e unless response.code == 502 || response.body.include?('Bad Gateway')
-
-        retries = (retries || 1) + 1
-        sleep(1) && retry if retries <= 3
-
-        raise GatewayError
       rescue RestClient::Exception => e
         raise e if e.response.code == 401
 

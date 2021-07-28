@@ -153,16 +153,5 @@ describe FmadataParseName::V2::Client do
         expect(response.failure?).to eq(true)
       end
     end
-
-    context 'when JSON::ParserError is returned' do
-      it 'raise JSON::ParserError' do
-        html_response = '<html><body><center><h1>403 Forbidden</h1></center></body></html>'
-
-        stub_request(:any, 'https://v2.parse.name/api/v2/names/parse?locale=en-US&q=bob%20vance')
-          .to_return(body: html_response)
-
-        expect { subject.parse('bob vance') }.to raise_error(JSON::ParserError)
-      end
-    end
   end
 end
