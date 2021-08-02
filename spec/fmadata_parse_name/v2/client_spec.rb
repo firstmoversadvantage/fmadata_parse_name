@@ -120,37 +120,27 @@ describe FmadataParseName::V2::Client do
       end
     end
 
-    context 'when 502 gateway error is returned' do
-      it 'retries request and after 3 retries returns failure Response' do
+    context 'when http 502 gateway error is returned' do
+      it 'raise GatewayError with 502 message' do
         html_response = '<html><body><center><h1>502 Bad Gateway</h1></center></body></html>'
 
         stub_request(:any, 'https://v2.parse.name/api/v2/names/parse?locale=en-US&q=bob%20vance')
           .to_return(body: html_response, status: 502)
-        response = subject.parse('bob vance')
 
-        expect(response.errors).to eq(
-          {
-            'error' => ['502 Gateway Error']
-          }
-        )
-        expect(response.failure?).to eq(true)
+        expect { subject.parse('bob vance') }
+          .to raise_error(FmadataParseName::V2::GatewayError, 'Error code: 502')
       end
     end
 
-    context 'when 504 gateway error is returned' do
-      it 'retries request and after 3 retries returns failure Response' do
+    context 'when http 504 gateway error is returned' do
+      it 'raise GatewayError with 504 message' do
         html_response = '<html><body><center><h1>504 Gateway Time-out</h1></center></body></html>'
 
         stub_request(:any, 'https://v2.parse.name/api/v2/names/parse?locale=en-US&q=bob%20vance')
           .to_return(body: html_response, status: 504)
-        response = subject.parse('bob vance')
 
-        expect(response.errors).to eq(
-          {
-            'error' => ['504 Gateway Error']
-          }
-        )
-        expect(response.failure?).to eq(true)
+        expect { subject.parse('bob vance') }
+          .to raise_error(FmadataParseName::V2::GatewayError, 'Error code: 504')
       end
     end
   end

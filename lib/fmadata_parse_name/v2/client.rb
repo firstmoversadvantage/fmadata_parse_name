@@ -1,5 +1,6 @@
 module FmadataParseName
   module V2
+    class GatewayError < StandardError; end
     class Client
       def initialize(token)
         @token = token
@@ -25,13 +26,8 @@ module FmadataParseName
         Response.new(json_response, 200)
       rescue RestClient::Exception => e
         raise e if e.response.code == 401
+        raise GatewayError.new, "Error code: #{e.response.code}" if [502, 504].include? e.response.code
 
-        if [502, 504].include? e.response.code
-          retries = (retries || 1) + 1
-          sleep(1) && retry if retries <= 3
-
-          return Response.new(gateway_error_body(e.response.code), e.response.code)
-        end
         Response.new(JSON(e.response.body), e.response.code)
       end
 
@@ -40,16 +36,6 @@ module FmadataParseName
         host_name = ENV['PARSE_NAME_HOST'] || 'https://v2.parse.name/'
 
         host_name + "api/v2/names/parse"
-      end
-
-      def gateway_error_body(code)
-        {
-          'base' => {
-            'errors' => {
-              'error' => ["#{code} Gateway Error"]
-            }
-          }
-        }
       end
     end
   end
