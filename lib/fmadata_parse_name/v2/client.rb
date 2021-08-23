@@ -6,10 +6,9 @@ module FmadataParseName
       end
 
       def parse(input)
-        unless @token
-          raise 'No authentication token given'
-        end
+        raise 'No authentication token given' unless @token
 
+        retries ||= 0
         url = set_url
 
         response = RestClient.get(
@@ -24,12 +23,20 @@ module FmadataParseName
 
         Response.new(json_response, 200)
       rescue RestClient::Exception => e
-        raise e if e.response.code == 401
+        case e.response.code
+        when 401
+          raise e
+        when 502, 504
+          sleep(1) && retry if (retries += 1) < 3
+
+          raise e
+        end
 
         Response.new(JSON(e.response.body), e.response.code)
       end
 
       private
+
       def set_url
         host_name = ENV['PARSE_NAME_HOST'] || 'https://v2.parse.name/'
 

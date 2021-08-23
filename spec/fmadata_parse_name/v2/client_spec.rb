@@ -119,5 +119,17 @@ describe FmadataParseName::V2::Client do
         )
       end
     end
+
+    context 'when http 502 gateway error is returned' do
+      it 'raise GatewayError with 502 message' do
+        html_response = '<html><body><center><h1>502 Bad Gateway</h1></center></body></html>'
+
+        stub_request(:any, 'https://v2.parse.name/api/v2/names/parse?locale=en-US&q=bob%20vance')
+          .to_return(body: html_response, status: 502)
+
+        expect { subject.parse('bob vance') }
+          .to raise_error(RestClient::Exception)
+      end
+    end
   end
 end
