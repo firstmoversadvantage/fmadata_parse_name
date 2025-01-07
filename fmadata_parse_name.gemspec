@@ -13,15 +13,15 @@ Gem::Specification.new do |s|
   all_files       = `git ls-files -z`.split("\x0")
   s.files         = all_files.grep(%r!^(exe|lib|rubocop)/|^.rubocop.yml$!)
 
-  s.required_ruby_version = '>= 2.3.3'
+  s.required_ruby_version = '>= 3.1.4'
 
   s.require_paths = ["lib"]
   s.homepage      = 'https://v2.parse.name'
   s.license       = 'MIT'
 
-  s.add_runtime_dependency "rest-client", "~> 2.0"
-  s.add_development_dependency "rspec", "~> 3.4"
-  s.add_development_dependency "vcr", "~> 4.0"
-  s.add_development_dependency "webmock", "~> 3.5.1"
-  s.add_development_dependency "pry", "~> 0.12"
+  s.add_runtime_dependency "rest-client", "~> 2.1"
+  s.add_development_dependency "rspec", "~> 3.13"
+  s.add_development_dependency "vcr", "~> 6.3.1"
+  s.add_development_dependency "webmock", "~> 3.24"
+  s.add_development_dependency "pry", "~> 0.15.2"
 end
