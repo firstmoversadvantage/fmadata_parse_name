@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fmadata_parse_name (1.0.0)
+    fmadata_parse_name (2.0.0)
       rest-client (~> 2.1)
 
 GEM
